@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "base_app.apps.BaseAppConfig",
+    "krd.apps.KrdConfig",
+    "rnd.apps.RndConfig",
+    "pg_sql.apps.PgSqlConfig"
 ]
 
 MIDDLEWARE = [
