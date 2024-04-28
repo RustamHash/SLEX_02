@@ -1,0 +1,13 @@
+{% extends 'krd/home.html' %}
+
+{% block menu %}
+    <div id="header">
+        <div class="basic-div">
+            <ul id="menu">
+                {% for con in contracts %}
+                    <li><span><a href="{{ con.get_home_url }}">{{ con.name }}</a></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

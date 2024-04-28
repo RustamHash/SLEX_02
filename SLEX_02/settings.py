@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "base_app.apps.BaseAppConfig",
     "krd.apps.KrdConfig",
     "rnd.apps.RndConfig",
-    "pg_sql.apps.PgSqlConfig"
+    "pg_sql.apps.PgSqlConfig",
+    "vlg.apps.VlgConfig"
 ]
 
 MIDDLEWARE = [
