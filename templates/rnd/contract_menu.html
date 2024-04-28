@@ -1,0 +1,41 @@
+{% extends 'krd/contracts.html' %}
+
+{% block content %}
+    <div id="menu-header">
+        <div class="basic-div">
+            <h3>{{ contract.name }}</h3>
+            <div class="contract-menu" id="contract-menu">
+                <div class="operation-div">
+                    <form enctype="multipart/form-data" method="post" action="{% url 'krd:load_order' contract.slug %}">
+                        {% csrf_token %}
+                        <input type="file" name="file" id="file" accept=".xls, .xlsx">
+                        <span class="span-button"><input type="submit" value="Импорт"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block data_order %}
+    <div id="menu-header">
+
+        <div class="basic-div">
+            <div class="operation-div">
+                <table class="content-table" id="products-table">
+                    <tr>
+                        {% for key, val in result.items %}
+                            <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        {% for key, val in result.items %}
+                            <td>{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

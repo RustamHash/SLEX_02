@@ -1,0 +1,52 @@
+{% extends 'krd/contracts.html' %}
+
+{% block content %}
+    <div id="menu-header">
+        <div class="basic-div">
+            <h3>{{ contract.name }}</h3>
+            <div class="contract-menu" id="contract-menu">
+                <div class="operation-div">
+                    <h3>Проверить наличие товара в сетевом складе</h3>
+                    <form enctype="multipart/form-data" method="post" action="">
+                        {% csrf_token %}
+                        <input type="file" name="file" id="file" accept=".xls, .xlsx">
+                        <span class="span-button"><input type="submit" name="check_goods" value="Проверить"></span>
+                    </form>
+                </div>
+                <div class="operation-div">
+                    <h3>Загрузить остатки</h3>
+                    <form enctype="multipart/form-data" method="post" action="">
+                        {% csrf_token %}
+                        <span class="span-button"><input type="submit" name="load_stock" value="Проверить"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block data_order %}
+    <div id="menu-header">
+
+        <div class="basic-div">
+            <div class="operation-div">
+                <table class="content-table" id="products-table">
+                    {% if check_goods %}
+                        <tr>
+                            <th>Товар</th>
+                            <th>Инфо</th>
+                        </tr>
+                        <tr>
+                            {% for key, val in check_goods.items %}
+                                <td>{{ key }}</td>
+                                <td>{{ val }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endif %}
+                </table>
+            {{ stock_goods }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base_app/base_templates.html' %}
+{% load static %}
+
+{% block menu %}
+    <div id="header">
+        <div class="basic-div">
+            <ul id="menu">
+                {% for fil in filial %}
+                    <li><span><a href="{{ fil.get_home_url }}">{{ fil.name }}</a></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

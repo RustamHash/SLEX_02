@@ -1,0 +1,30 @@
+input[type=text], input[type=password] {
+    width: 90%;
+    padding: 6px 10px;
+    border: 1px solid RGB(205, 205, 205);
+    border-radius: 4px;
+}
+
+input[type=date], input[type=file] {
+    padding: 6px 10px;
+    border: 1px solid RGB(205, 205, 205);
+    border-radius: 4px;
+}
+
+.operation-div > input[type=text] {
+    width: 200px;
+}
+
+textarea {
+    width: 90%;
+    height: 150px;
+    padding: 6px 10px;
+    border: 1px solid RGB(205, 205, 205);
+    border-radius: 4px;
+}
+
+select {
+    padding: 6px 10px;
+    border: 1px solid RGB(205, 205, 205);
+    border-radius: 4px;
+}

@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'base_app/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/inputs.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/content.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/contracts.css' %}">
+    <title>Обработка</title>
+</head>
+<body>
+
+<div class="container_header">
+    <div id="menu-header">
+        <div class="menu-header-left">
+            {% if prefix %}
+                <a href="/{{ prefix }}/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
+            {% else %}
+                <a href="/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
+            {% endif %}
+        </div>
+        <div class="menu-header-center">
+        {% if user.is_superuser %}
+            {% if title %}
+                {% if user.is_superuser %}
+                    <h2><a href="/">{{ title }}</a></h2>
+                {% else %}
+                    <h2><a href="/{{ prefix }}/">{{ title }}</a></h2>
+                {% endif %}
+            {% else %}
+                <h2><a href="/">Главная</a></h2>
+            {% endif %}
+        {% else %}
+            {% if title %}
+                <h2>{{ title }}</h2>
+            {% else %}
+                <h2>Главная</h2>
+            {% endif %}
+        {% endif %}
+        </div>
+        <div class="menu-header-right">
+            {% if user.is_superuser %}
+                <a href="/admin/">Сервис</a>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+                {% if user.first_name or user.last_name %}
+                    <a href="{% url 'logout' %}">{{ user.get_full_name }}</a>
+                {% else %}
+                    <a href="{% url 'logout' %}">{{ user }}</a>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+{% block message %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block data_order %}
+{% endblock %}
+
+{% block modals %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
