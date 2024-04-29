@@ -46,6 +46,20 @@ def detail_view_contracts(request, _contract_slug, _filial_slug):
     return render(request, f'base_app/contract_menu.html', context=context)
 
 
+def handler_data_form(request, _contract_slug, _filial_slug):
+    if request.method == 'POST':
+        if "orders" in request.POST:
+            return HttpResponse('orders!')
+        elif "stocks" in request.POST:
+            return HttpResponse('stocks!')
+        elif "product_one" in request.POST:
+            return HttpResponse('product_one!')
+        elif "product_all" in request.POST:
+            return HttpResponse('product_all!')
+        else:
+            return HttpResponse('Для данного контракта эта функция еще не настроена!')
+
+
 def load_order(request, _contract_slug, _filial_slug):
     if request.method == 'POST':
         context['error_msg'] = False

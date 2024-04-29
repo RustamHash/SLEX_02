@@ -71,8 +71,8 @@ class Contracts(models.Model):
     def get_home_url(self):
         return reverse_lazy(f'detail_contract', kwargs={'_contract_slug': self.slug, '_filial_slug': self.filial.slug})
 
-    def load_file_url(self):
-        return reverse_lazy(f'load_file', kwargs={'_filial_slug': self.filial.slug, '_contract_slug': self.slug})
+    def handler_form(self):
+        return reverse_lazy(f'handler_form', kwargs={'_filial_slug': self.filial.slug, '_contract_slug': self.slug})
 
     class Meta:
         ordering = ('position',)

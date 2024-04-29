@@ -62,6 +62,7 @@
 }
 
 #contract-menu div {
-    min-width: 150px;
+    /*min-width: 350px;*/
+    min-width: 24%;
     border: 2px solid #111;
 }

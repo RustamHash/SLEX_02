@@ -4,13 +4,38 @@
     <div id="menu-header">
         <div class="basic-div">
             <h3>{{ contract.name }}</h3>
-            {{ prefix }}
             <div class="contract-menu" id="contract-menu">
                 <div class="operation-div">
+                    <h4>Обработать заявки</h4>
                     <form enctype="multipart/form-data" method="post"
-                          action="{{ contract.load_file_url }}">
+                          action="{{ contract.handler_form }}">
                         {% csrf_token %}
                         <input type="file" name="file" id="file" accept=".xls, .xlsx">
+                        <span class="span-button"><input type="submit" name="orders" value="Импорт"></span>
+                    </form>
+                </div>
+                <div class="operation-div">
+                    <h4>Проверить товар на наличие в сетевом</h4>
+                    <form enctype="multipart/form-data" method="post"
+                          action="{{ contract.handler_form }}">
+                        {% csrf_token %}
+                        <input type="file" name="file" id="file" accept=".xls, .xlsx">
+                        <span class="span-button"><input type="submit" value="Импорт"></span>
+                    </form>
+                </div>
+                <div class="operation-div">
+                    <h4>Проверить товар на наличие в сетевом</h4>
+                    <form enctype="multipart/form-data" method="post"
+                          action="{{ contract.handler_form }}">
+                        {% csrf_token %}
+                        <span><input type="search" name="art"><input type="submit" value="Проверить"></span>
+                    </form>
+                </div>
+                <div class="operation-div">
+                    <h4>Загрузить остатки</h4>
+                    <form enctype="multipart/form-data" method="post"
+                          action="{{ contract.handler_form }}">
+                        {% csrf_token %}
                         <span class="span-button"><input type="submit" value="Импорт"></span>
                     </form>
                 </div>
