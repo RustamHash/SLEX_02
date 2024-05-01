@@ -6,7 +6,10 @@ class Filial(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
-    dsn = models.CharField(max_length=255)
+    url_pg = models.CharField(max_length=255)
+    url_wms = models.CharField(max_length=255)
+    login_wms = models.CharField(max_length=255)
+    password_wms = models.CharField(max_length=255)
     prog_id = models.IntegerField(default=0)
     position = models.IntegerField(default=0)
     as_active = models.BooleanField(default=True)
@@ -66,15 +69,48 @@ class Contracts(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse_lazy('contract-detail', kwargs={'slug': self.slug})
+        return reverse_lazy('operations-detail', kwargs={'slug': self.slug})
 
     def get_home_url(self):
-        return reverse_lazy(f'detail_contract', kwargs={'_contract_slug': self.slug, '_filial_slug': self.filial.slug})
+        return reverse_lazy(f'operations', kwargs={'_contract_slug': self.slug, '_filial_slug': self.filial.slug})
+        # return reverse_lazy(f'detail_contract', kwargs={'_contract_slug': self.slug,})
 
     def handler_form(self):
         return reverse_lazy(f'handler_form', kwargs={'_filial_slug': self.filial.slug, '_contract_slug': self.slug})
+        # return reverse_lazy(f'handler_form', kwargs={'_contract_slug': self.slug})
 
     class Meta:
         ordering = ('position',)
         verbose_name = 'Контракт'
         verbose_name_plural = 'Контракты'
+
+
+class Operations(models.Model):
+    id = models.AutoField(primary_key=True)
+    contract = models.ManyToManyField(Contracts, related_name='operations')
+    name = models.CharField(max_length=255)
+    slug = models.SlugField()
+    load_file = models.BooleanField(default=True)
+    load_stock = models.BooleanField(default=True)
+    search_goods = models.BooleanField(default=True)
+    btn_label = models.CharField(max_length=155)
+    position = models.IntegerField(default=0)
+    as_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse_lazy('operations-detail', kwargs={'slug': self.slug})
+
+    def get_home_url(self):
+        return reverse_lazy('choice_operation', kwargs={
+            # '_filial_slug': None,
+            # '_contract_slug': None,
+            '_operation_slug': self.slug
+        })
+
+    class Meta:
+        ordering = ('position', )
+        verbose_name = 'Операция'
+        verbose_name_plural = 'Операции'

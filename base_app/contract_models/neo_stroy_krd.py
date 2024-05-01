@@ -45,6 +45,7 @@ def start(file_name, contract):
                     '6.2. Приемка УС на складе\n'
                     '6.3. Отгрузка УС со склада\n'
                     '6.4. Перемещение УС на складе\n': 1}, False
+        dic_log_return['Доступы'] = int(dic_log_return['Доступы']/2)
         return dic_log_return, False
     except Exception as e:
         return {'error': str(e)}, True

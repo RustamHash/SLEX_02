@@ -1,5 +1,8 @@
 import xml.etree.ElementTree as ET
+from pprint import pprint
 from xml.dom import minidom
+
+import pandas as pd
 
 prefix_type_order = {1: 'CustPicking', 0: 'VendReceipt'}
 
@@ -25,8 +28,6 @@ def data_to_dict(df):
 
 # def start_client(data: dict, key_contract):
 #     key_contract = __update_name_contract(key_contract)
-#     global contract
-#     contract = contracts[str(key_contract)]
 #     type_order = 'CustVendTable'
 #     const_name = f'{str(type_order)}ExportDC'
 #     _dt = __create_datetime()
@@ -99,3 +100,6 @@ def __save_xml(filename, xml_code):
     xml_prettyxml = minidom.parseString(xml_string).toprettyxml()
     with open(filename, 'w', encoding='utf-8') as xml_file:
         xml_file.write(xml_prettyxml)
+
+
+
