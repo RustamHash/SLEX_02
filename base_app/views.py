@@ -5,8 +5,7 @@ from django.http import FileResponse, HttpResponse
 from django.shortcuts import render, redirect
 
 from base_app.models import Filial, Contracts, Menu, Operations
-from base_app.processing_utils import normalizing_of_start_function
-
+from base_app.utils import comparison_stock
 from base_app.contract_models import neo_stroy_krd
 
 from base_app.contract_models.rnd import ok
@@ -24,6 +23,7 @@ dict_module = {
     'neo-stroy-sochi': neo_stroy_krd,
     'agrokompleks': agro,
     'neo-stroj-rostov': neo_stroy_krd,
+    'ok': ok
 }
 dict_operation = {
     'order_btn': False,
@@ -59,8 +59,10 @@ def show_contracts(request, **kwargs):
 def show_operations(request, **kwargs):
     __clear_context()
     context['contract_selected'] = kwargs['_contract_slug']
-    context['operations'] = Operations.objects.filter(as_active=True, contract__slug=kwargs['_contract_slug'])
+    # context['operations'] = Operations.objects.filter(as_active=True, contract__slug=kwargs['_contract_slug'])
+
     context['contract'] = Contracts.objects.get(filial__slug=context['filial'].slug, slug=kwargs['_contract_slug'])
+    context['operations'] = context['contract'].operations.filter(as_active=True)
     return render(request, f'base_app/operations.html', context=context)
 
 
@@ -114,6 +116,15 @@ def event_search_goods(request, **kwargs):
 
 
 def event_load_stock(request, **kwargs):
+    if kwargs['_operation_slug'] == 'comparison-stock':
+        __file_pg_stock = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
+        __file_wms_stock = WmsStocks().get_goods_by_guid_group(_contract=context['contract'])
+        context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock, __file_wms_stock=__file_wms_stock)
+        try:
+            return FileResponse(open(context['result'], 'rb'))
+        except Exception as e:
+            context['result'] = {'error': e}
+            return render(request, f'base_app/show_result.html', context=context)
     if request.method == 'POST':
         if kwargs['_operation_slug'] == 'load_stock_pg':
             context['result'] = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
@@ -125,7 +136,7 @@ def event_load_stock(request, **kwargs):
             context['result'] = _dict_file_name
             return render(request, f'base_app/show_result.html', context=context)
         elif kwargs['_operation_slug'] == 'load_stock_wms':
-            context['result'] = WmsStocks().get_goods_by_guid_group(_contract=context['contract'], top=20)
+            context['result'] = WmsStocks().get_goods_by_guid_group(_contract=context['contract'])
         try:
             return FileResponse(open(context['result'], 'rb'))
         except Exception as e:

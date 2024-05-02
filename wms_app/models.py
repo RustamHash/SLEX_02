@@ -17,8 +17,20 @@ class SaveFileWms:
         _path_files = self.__exists_create_folder()
         _f_name = f'{_path_files}\\{self.__create_date_file_name()}_{self.contract_wms}_wms.xlsx'
         _df = pd.json_normalize(self.json_stocks_wms)
+        for col in _df.columns:
+            if 'navigationLinkUrl' in col:
+                _df.drop([col], axis=1, inplace=True)
+        _df = self.__date_reformat(_df)
         _df.to_excel(f'{_f_name}', index=False)
         return _f_name
+
+    @staticmethod
+    def __date_reformat(_df):
+        for col in _df.columns:
+            if 'СерияНоменклатуры.ДатаПроизводства' == col or 'СерияНоменклатуры.ГоденДо' == col:
+                _df[col] = pd.to_datetime(_df[col])
+                _df[col] = _df[col].dt.date
+        return _df
 
     @staticmethod
     def __validate_file_name(file_name):
@@ -67,6 +79,7 @@ class WmsKrd:
         self.params = None
         self.contract_wms = None
         self.json_data = None
+        # f"http://172.172.185.67/krd_itc_wms/odata/standard.odata/"
         self.full_url = f"http://{self.server}/{self.infobase}/odata/standard.odata/"
         self._auth = requests.auth.HTTPBasicAuth(self.username, self.password)
 
@@ -85,15 +98,20 @@ class WmsStocks(WmsKrd, SaveFileWms):
         super(WmsStocks, self).__init__()
         self.cat_name = 'ОстаткиВПоллетах'
         self.params = (f"$select="
+                       # f"*"
                        f"Номенклатура/Code,"
                        f"Номенклатура/Description,"
                        f"Номенклатура/Артикул,"
                        f"Номенклатура/Parent/Description,"
-                       f"КоличествоBalance"
+                       f"КоличествоBalance,"
+                       f"СерияНоменклатуры/ДатаПроизводства,"
+                       f"СерияНоменклатуры/ГоденДо,"
+                       f"ЯчейкаХранения/Склад/Description"
                        f"&$orderby=Номенклатура/Артикул"
                        )
         self.full_url = (f'{self.full_url}/AccumulationRegister_{self.cat_name}/Balance?'
-                         f'$format=json&$expand=Номенклатура/Parent'
+                         f'$format=json&'
+                         f'$expand=Номенклатура/Parent, ЯчейкаХранения/Склад, СерияНоменклатуры'
                          )
 
     def get_good_by_art(self, good_art, _contract):

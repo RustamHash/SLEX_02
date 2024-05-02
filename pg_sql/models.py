@@ -29,8 +29,8 @@ class SaveFile:
 
     def save_reports_stock(self):
         _path_files = self.__exists_create_folder()
-        if 'id' in self.df_stocks_save.columns and 'КодТовара' in self.df_stocks_save.columns:
-            self.df_stocks_save.drop(['id', 'КодТовара'], axis=1, inplace=True)
+        if 'id' in self.df_stocks_save.columns:
+            self.df_stocks_save.drop(['id'], axis=1, inplace=True)
         _f_name = f'{_path_files}\\{self.__create_date_file_name()}_{self.contract_save}.xlsx'
         self.df_stocks_save.to_excel(f'{_f_name}', index=False)
         return _f_name
@@ -135,6 +135,7 @@ class PgStocks(PgConnection, SaveFile):
         if top is not None:
             self._sql = f'{self._sql} LIMIT {top}'
         self.df_stocks_save = self.connect()
+        print(self.df_stocks_save)
         _file_name_stock = self.save_reports_stock()
         return _file_name_stock
 
