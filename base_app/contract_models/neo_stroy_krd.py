@@ -4,11 +4,11 @@ from base_app.utils import data_to_dict, save_to_xml
 dic_log_return = {'Расход': 0, 'Приход': 0, 'Доступы': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
 dic_const = {}
 dic_const_krd = {'id_sklad': '16718149', 'id_client': '16718173', 'id_postav': '16718148', 'delivery_type': 2,
-                 'id_inspection': '16720118'}
+                 'id_engineer': '16720118'}
 dic_const_sochi = {'id_sklad': '16718318', 'id_client': '16718173', 'id_postav': '16718148', 'delivery_type': 2,
-                   'id_inspection': '16720118'}
+                   'id_engineer': '16720118'}
 dic_const_rnd = {'id_sklad': '17017234', 'id_client': '17017253', 'id_postav': '17017238', 'delivery_type': 2,
-                 'id_inspection': '17011254'}
+                 'id_engineer': '17011254'}
 NUM_QTY_ORDER = 50
 NUM_QTY_PORDER = 51
 NUM_QTY_ENGINEER = 52
@@ -16,9 +16,9 @@ NUM_QTY_ENGINEER = 52
 
 def start(file_name, contract):
     global dic_const, dic_const_sochi, dic_const_krd, dic_const_rnd
-    if contract.name == 'Волга-М_Сочи(Сбер)':
+    if contract.slug == 'neo-stroy-sochi':
         dic_const = dic_const_sochi
-    elif contract.name == 'Нео-Строй(Ростов)':
+    elif contract.slug == 'neo-stroj-rostov':
         dic_const = dic_const_rnd
     else:
         dic_const = dic_const_krd
@@ -32,11 +32,8 @@ def start(file_name, contract):
             __create_porder(_df_porder, contract, engineer=False)
             __create_product(_df_porder, contract)
         if len(_df_engineer) > 0:
-            global NUM_QTY_ORDER, NUM_QTY_PORDER
             dic_const['id_client'] = dic_const['id_inspection']
             dic_const['id_postav'] = dic_const['id_inspection']
-            NUM_QTY_ORDER = 52
-            NUM_QTY_PORDER = 52
             __create_order(_df_engineer, contract, engineer=True)
             __create_porder(_df_engineer, contract, engineer=True)
         if len(_df_order) == 0 and len(_df_porder) == 0 and len(_df_engineer) == 0:
@@ -45,13 +42,14 @@ def start(file_name, contract):
                     '6.2. Приемка УС на складе\n'
                     '6.3. Отгрузка УС со склада\n'
                     '6.4. Перемещение УС на складе\n': 1}, False
-        dic_log_return['Доступы'] = int(dic_log_return['Доступы']/2)
+        dic_log_return['Доступы'] = int(dic_log_return['Доступы'] / 2)
         return dic_log_return, False
     except Exception as e:
         return {'error': str(e)}, True
 
 
 def __load_parse_file(_wb_file):
+    pd.set_option('future.no_silent_downcasting', True)
     _df = pd.read_excel(_wb_file)
     _df.drop(index=[0], inplace=True)
     _df.dropna(subset=_df.columns[1], inplace=True)
@@ -90,11 +88,17 @@ def __create_order(_df, contract, engineer):
     df_order = pd.DataFrame()
     df_order['SalesId'] = _df[_df.columns[1]]
     df_order['InventLocationId'] = dic_const['id_sklad']
-    df_order['ConsigneeAccount'] = dic_const['id_client']
+    if engineer:
+        df_order['ConsigneeAccount'] = dic_const['id_engineer']
+    else:
+        df_order['ConsigneeAccount'] = dic_const['id_client']
     df_order['DeliveryDate'] = __create_datetime_order()
     df_order['ManDate'] = __create_datetime_order()
     df_order['Itemid'] = _df[_df.columns[6]]
-    df_order['Qty'] = _df[_df.columns[51]]
+    if engineer:
+        df_order['Qty'] = _df[_df.columns[52]]
+    else:
+        df_order['Qty'] = _df[_df.columns[51]]
     df_order['SalesUnit'] = 'шт'
     df_order['Delivery'] = dic_const['delivery_type']
     df_order['Redelivery'] = 1
@@ -111,15 +115,23 @@ def __create_order(_df, contract, engineer):
 def __create_porder(_df, contract, engineer):
     df_porder = pd.DataFrame()
     df_porder['Itemid'] = _df[_df.columns[6]]
-    df_porder['Qty'] = _df[_df.columns[50]]
+    if engineer:
+        df_porder['Qty'] = _df[_df.columns[52]]
+    else:
+        df_porder['Qty'] = _df[_df.columns[50]]
     df_porder['PurchId'] = _df[_df.columns[1]]
-    df_porder['VendAccount'] = dic_const['id_postav']
+    if engineer:
+        df_porder['VendAccount'] = dic_const['id_engineer']
+    else:
+        df_porder['VendAccount'] = dic_const['id_postav']
     df_porder['DeliveryDate'] = __create_datetime_order()
     df_porder['InventLocationId'] = dic_const['id_sklad']
     df_porder['ProductionDate'] = '01-01-2023'
     df_porder['PurchUnit'] = 'шт'
     df_porder['PurchTTN'] = 1
     df_porder['Price'] = 1
+    df_porder['Comment'] = _df[_df.columns[1]]
+    # print(df_porder.to_markdown())
     dic_porder = data_to_dict(df_porder)
     save_to_xml(dic_porder, 'VendReceipt', contract=contract)
     if engineer:
