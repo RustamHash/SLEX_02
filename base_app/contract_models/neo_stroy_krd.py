@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# base_app\contract_models\neo_stroy_krd.py
 import pandas as pd
 from base_app.utils import data_to_dict, save_to_xml
 
@@ -175,10 +177,3 @@ def __create_product(_df, contract):
     dic_product = data_to_dict(df_product)
     save_to_xml(dic_product, 'InventTable', contract=contract)
     dic_log_return['Справочник товаров'] += len(dic_product)
-
-
-if __name__ == '__main__':
-    from tkinter import filedialog
-
-    wb_name = filedialog.askopenfilenames()
-    start(wb_name)
