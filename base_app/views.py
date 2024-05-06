@@ -10,7 +10,7 @@ from base_app.contract_models import neo_stroy_krd
 
 from base_app.contract_models.rnd import ok
 
-from base_app.contract_models.krd import toshev, kzvs, agro
+from base_app.contract_models.krd import toshev, kzvs, agro, soiprom
 
 from pg_sql.models import PgStocks, PgGoods
 from wms_app.models import WmsStocks, WmsGoods
@@ -23,7 +23,8 @@ dict_module = {
     'neo-stroy-sochi': neo_stroy_krd,
     'agrokompleks': agro,
     'neo-stroj-rostov': neo_stroy_krd,
-    'ok': ok
+    'ok': ok,
+    'soiprom': soiprom
 }
 dict_operation = {
     'order_btn': False,

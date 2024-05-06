@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1rj_f1($it+!-^#3b*(f#zc@&$#56ifucpnt_bt^ap+_(3v%db
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.28.178.81']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.28.178.81', 'update.googleapis.com']
 
 
 # Application definition
