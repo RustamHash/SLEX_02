@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # base_app\contract_models\neo_stroy_krd.py
 import pandas as pd
+import datetime
+
 from base_app.utils import data_to_dict, save_to_xml
 
 dic_log_return = {'Расход': 0, 'Приход': 0, 'Доступы': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
@@ -34,8 +36,6 @@ def start(file_name, contract):
             __create_porder(_df_porder, contract, engineer=False)
             __create_product(_df_porder, contract)
         if len(_df_engineer) > 0:
-            dic_const['id_client'] = dic_const['id_inspection']
-            dic_const['id_postav'] = dic_const['id_inspection']
             __create_order(_df_engineer, contract, engineer=True)
             __create_porder(_df_engineer, contract, engineer=True)
         if len(_df_order) == 0 and len(_df_porder) == 0 and len(_df_engineer) == 0:
@@ -72,7 +72,6 @@ def __load_parse_file(_wb_file):
 
 
 def __create_datetime():
-    import datetime
     _dt = datetime.datetime.now() + datetime.timedelta(days=1)
     _dt = _dt.strftime("%Y%m%d-%H%M%S")
     _dt = str(_dt)
@@ -80,7 +79,6 @@ def __create_datetime():
 
 
 def __create_datetime_order():
-    import datetime
     _dt = datetime.datetime.now() + datetime.timedelta(days=1)
     _dt = _dt.strftime("%Y-%m-%d")
     return _dt
@@ -128,7 +126,7 @@ def __create_porder(_df, contract, engineer):
         df_porder['VendAccount'] = dic_const['id_postav']
     df_porder['DeliveryDate'] = __create_datetime_order()
     df_porder['InventLocationId'] = dic_const['id_sklad']
-    df_porder['ProductionDate'] = '01-01-2023'
+    df_porder['ProductionDate'] = __create_datetime_order()
     df_porder['PurchUnit'] = 'шт'
     df_porder['PurchTTN'] = 1
     df_porder['Price'] = 1
