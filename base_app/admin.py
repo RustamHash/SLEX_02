@@ -1,5 +1,5 @@
 from django.contrib import admin
-from base_app.models import Filial, Menu, Contracts
+from base_app.models import Filial, Menu, Contracts, Operations
 
 
 class FilialAdmin(admin.ModelAdmin):
@@ -29,6 +29,16 @@ class ContractsAdmin(admin.ModelAdmin):
         fields = '__all__'
 
 
+class OperationAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    prepopulated_fields = {'slug': ('name', )}
+
+    class Meta:
+        model = Operations
+        fields = '__all__'
+
+
 admin.site.register(Filial, FilialAdmin)
 admin.site.register(Menu, MenuAdmin)
 admin.site.register(Contracts, ContractsAdmin)
+admin.site.register(Operations, OperationAdmin)

@@ -4,44 +4,27 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'base_app/css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/menu.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/buttons.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/inputs.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/content.css' %}">
     <link rel="stylesheet" href="{% static 'base_app/css/login.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/contracts.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/base_home.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/sub_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/forms.css' %}">
+
     <title>Обработка</title>
 </head>
 <body>
 
-<div class="container_header">
-    <div id="menu-header">
+<div id="container_header">
+    <div id="menu_header">
         <div class="menu-header-left">
-            {% if prefix %}
-                <a href="/{{ prefix }}/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
-            {% else %}
                 <a href="/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
-            {% endif %}
         </div>
         <div class="menu-header-center">
-            {% if user.is_superuser %}
-                {% if title %}
-                    {% if user.is_superuser %}
-                        <h2><a href="/">{{ title }}</a></h2>
-                    {% else %}
-                        <h2><a href="/{{ prefix }}/">{{ title }}</a></h2>
-                    {% endif %}
-                {% else %}
-                    <h2><a href="/">Главная</a></h2>
-                {% endif %}
-            {% else %}
-                {% if title %}
-                    <h2>{{ title }}</h2>
-                {% else %}
-                    <h2>Главная</h2>
-                {% endif %}
-            {% endif %}
+        {% if filial %}
+                <h2><a href="{{ filial.get_home_url }}">{{ filial.name }}</a></h2>
+        {% else %}
+                <h2><a href="/">Главная</a></h2>
+        {% endif %}
         </div>
         <div class="menu-header-right">
             {% if user.is_superuser %}
@@ -59,34 +42,33 @@
             {% endif %}
         </div>
     </div>
+{#    <a href="javascript:window.history.back();"> <<<< </a>#}
+    {% block menu %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block show_result %}
+    {% endblock %}
+
+    {% if error_msg %}
+        <div id="header">
+            <div class="basic-div">
+                <div><label>
+                    <textarea>{{ error_msg }}</textarea>
+                </label></div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% block modals %}
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
 </div>
 
-{% block menu %}
-{% endblock %}
 
-{% if msg %}
-    <div id="header">
-        <div class="basic-div">
-            {% if error_msg %}
-                <div class=" content-error-div">{{ msg }}</div>
-            {% else %}
-                <div class=" content-success-div">{{ msg }}</div>
-            {% endif %}
-        </div>
-    </div>
-
-{% endif %}
-
-{% block content %}
-{% endblock %}
-
-{% block data_order %}
-{% endblock %}
-
-{% block modals %}
-{% endblock %}
-
-{% block scripts %}
-{% endblock %}
 </body>
 </html>

@@ -1,24 +1,4 @@
-#header {
-    background: white;
-    /*position: fixed;*/
-    width: 100%;
-    height: 93px;
-    left: 0;
-    top: 0;
-    z-index: 1
-}
-
-#basic_div_menu {
-    font-style: normal;
-    background-color: RGB(240, 240, 240);
-    border: 1px solid RGB(200, 200, 200);
-    border-radius: 4px;
-    margin: 0 auto;
-    width: 100%;
-    text-decoration: none;
-}
-
-.menu {
+.sub_menu {
     display: flex;
     border-radius: 4px;
     list-style: none;
@@ -28,7 +8,7 @@
     margin: 15px;
 }
 
-.menu span.button_line {
+.sub_menu span.button_line {
     border-radius: 4px;
     /*background: RGB(120, 120, 120);*/
     color: white;
@@ -39,11 +19,11 @@
     cursor: pointer;
 }
 
-.menu span.button_line:hover {
+.sub_menu span.button_line:hover {
     background: RGB(80, 75, 200);
 }
 
-.menu span.selected {
+.sub_menu span.selected {
     border-radius: 4px;
     background: RGB(80, 75, 200);
     color: white;
@@ -54,7 +34,7 @@
     cursor: pointer;
 }
 
-.menu a {
+.sub_menu a {
     display: block;
     width: 100%;
     color: white;

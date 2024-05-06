@@ -2,13 +2,15 @@
 {% load static %}
 
 {% block menu %}
-    <div id="header">
-        <div class="basic-div">
-            <ul id="menu">
-                {% for fil in filial %}
-                    <li><span><a href="{{ fil.get_home_url }}">{{ fil.name }}</a></span></li>
-                {% endfor %}
-            </ul>
+    <div id="basic_div_menu">
+        <div class="menu">
+            {% for menu in menus %}
+                {% if contract_selected == menu.slug %}
+                    <span class="selected"><a href="{{ menu.get_home_url }}">{{ menu.name }}</a></span>
+                {% else %}
+                    <span class="button_line"><a href="{{ menu.get_home_url }}">{{ menu.name }}</a></span>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

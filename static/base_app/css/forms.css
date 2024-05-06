@@ -1,0 +1,51 @@
+.operation_div {
+    display: flex;
+    /*justify-content: space-between;*/
+    justify-content: space-around;
+}
+
+.operation_form {
+    width: 100%;
+    display: flex;
+    /*border: 2px solid black;*/
+}
+
+.inp_search_file {
+    padding: 10px;
+    min-width: 350px;
+}
+
+.inp_open_file {
+    border: 2px solid black;
+    padding: 10px;
+    min-width: 350px;
+}
+
+.inp_open_file::file-selector-button {
+    display: none;
+}
+
+.inp_open_file::before {
+    border: 1px solid black;
+    border-radius: 3px 8px 3px 8px;
+    color: red;
+    content: attr(value) 'Выбрать заявку';
+    /*margin: 25px;*/
+    padding: 5px;
+}
+
+
+.inp_open_file:hover:before {
+    border: 1px groove blue;
+    background: lime;
+}
+
+.inp_open_file:active:before {
+    border: 1px groove blue;
+    background: yellow;
+}
+
+
+.btn_open_file {
+    padding: 10px;
+}

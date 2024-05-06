@@ -1,0 +1,37 @@
+#container_header {
+    font-style: normal;
+    border: 1px solid RGB(200, 200, 200);
+    border-radius: 4px;
+    margin: 5px auto;
+    width: 90%;
+    /*padding: 10px;*/
+}
+
+#container_header img {
+    max-width: 120px;
+}
+
+
+#menu_header {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    list-style: none;
+    background: linear-gradient(to right, pink, blue, hotpink);
+}
+
+#menu_header a {
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+}
+
+#menu_header div.menu-header-right a:hover {
+    background: RGB(80, 75, 200);
+}
+
+#menu_header div.menu-header-right > * {
+    padding-top: 5%;
+}
+

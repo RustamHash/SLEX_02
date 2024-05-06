@@ -1,7 +1,7 @@
 {% extends 'base_app/base_templates.html' %}
 
 {% block content %}
-    <div class="basic-div login-div">
+    <div class="basic_div login_div">
         {% if user.is_authenticated %}
             Вы уже выполнили вход на сайт
             <a href="{% url 'home' %}">Перейти на главную страницу</a>
