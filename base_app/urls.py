@@ -16,6 +16,10 @@ urlpatterns = [
     path('<slug:_filial_slug>/contracts/<slug:_contract_slug>/<slug:_operation_slug>/load_stocks',
          views.event_load_stock, name='event_load_stock'),
 
+
+    path('<slug:_filial_slug>/reports/', views.show_reports, name='reports'),
+
+
     path('accounts/login/', views.NotFound.as_view(), name='not_groups'),
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', views.logout_view, name='logout'),

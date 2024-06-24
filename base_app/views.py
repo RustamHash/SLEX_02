@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import render, redirect
 
-from base_app.models import Filial, Contracts, Menu, Operations
+from base_app.models import Filial, Contracts, Menu, Operations, Reports
 from base_app.utils import comparison_stock
 from base_app.contract_models import neo_stroy_krd
 
@@ -20,7 +20,7 @@ dict_module = {
     'toshev-rf': toshev,
     'kzvs': kzvs,
     'neo-stroy-krd': neo_stroy_krd,
-    'neo-stroy-sochi': neo_stroy_krd,
+    'neo-stroj-sochi': neo_stroy_krd,
     'agrokompleks': agro,
     'neo-stroj-rostov': neo_stroy_krd,
     'ok': ok,
@@ -83,6 +83,16 @@ def event_load_file(request, **kwargs):
                 return FileResponse(open(context['result'], 'rb'))
             except Exception as e:
                 context['result'] = {'error': e}
+
+    if kwargs['_operation_slug'] == 'build_peresort':
+        _file = request.FILES['file']
+        print(_file)
+        context['result'] = ok.build_peresort(_file_name=_file, _contract=context['contract'])
+        try:
+            return FileResponse(open(context['result'], 'rb'))
+        except Exception as e:
+            context['result'] = {'error': e}
+
     if request.method == 'POST':
         file = request.FILES.get('file', False)
         if file:
@@ -120,12 +130,14 @@ def event_load_stock(request, **kwargs):
     if kwargs['_operation_slug'] == 'comparison-stock':
         __file_pg_stock = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
         __file_wms_stock = WmsStocks().get_goods_by_guid_group(_contract=context['contract'])
-        context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock, __file_wms_stock=__file_wms_stock)
+        context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
+                                             __file_wms_stock=__file_wms_stock)
         try:
             return FileResponse(open(context['result'], 'rb'))
         except Exception as e:
             context['result'] = {'error': e}
             return render(request, f'base_app/show_result.html', context=context)
+
     if request.method == 'POST':
         if kwargs['_operation_slug'] == 'load_stock_pg':
             context['result'] = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
@@ -146,37 +158,10 @@ def event_load_stock(request, **kwargs):
     return render(request, f'base_app/operations.html', context=context)
 
 
-# РФ17676F101
-
-# def check_one_goods_in_pg(request, contract_slug):
-#     if request.method == 'POST':
-#         marking = request.POST.get('marking', False)
-#         if marking:
-#             _contract = Contracts.objects.get(filial__slug=filial_slug, slug=contract_slug)
-#             _df_res = get_good_by_marking_goods(_marking_goods=int(marking), _contract=_contract)
-#             context['_df_res'] = _df_res
-#             return render(request, f'base_app/contract_menu.html', context=context)
-#
-#
-# def check_all_goods_in_pg(request, contract_slug):
-#     if request.method == 'POST':
-#         file = request.FILES.get('file', False)
-#         if file:
-#             _contract = Contracts.objects.get(filial__slug=filial_slug, slug=contract_slug)
-#             _df_res = get_goods_list_by_marking_goods(_file_marking_goods=file, _contract=_contract)
-#             context['_df_res'] = _df_res
-#             return render(request, f'base_app/contract_menu.html', context=context)
-#
-#
-# def get_stock_store_by_group_id_contract(request, contract_slug):
-#     _contract = Contracts.objects.get(filial__slug=filial_slug, slug=contract_slug)
-#     group_id = _contract.id_groups_goods
-#     if contract_slug == 'ok':
-#         _df_res = query_goods_stock_by_group_id_ok(id_group_goods=group_id, _contract=_contract)
-#     else:
-#         _df_res = query_goods_stock_by_group_id(id_group_goods=group_id, _contract=_contract)
-#     context['_df_res'] = _df_res
-#     return render(request, f'base_app/contract_menu.html', context=context)
+def show_reports(request, **kwargs):
+    reports = context['filial'].reports.filter(as_active=True)
+    context['reports'] = reports
+    return render(request, f'base_app/reports.html', context=context)
 
 
 class Login(LoginView):
@@ -196,17 +181,6 @@ class NotFound(LoginView):
 def logout_view(request):
     logout(request)
     return redirect('home')
-
-
-# dict_function = {
-#     'order_btn_load_btn': load_order,
-#     'check_goods_pg_btn_load_btn':  check_all_goods_in_pg,
-#     'check_goods_pg_btn_search_btn': check_one_goods_in_pg,
-#     'stock_pg_btn_load_btn': get_stock_store_by_group_id_contract,
-#     'stock_pg_btn_search_btn': 'stock_one_goods_in_pg',
-#     'stock_wms_btn_load_btn': 'stock_all_goods_in_wms',
-#     'stock_wms_btn_search_btn': 'stock_one_goods_in_wms'
-# }
 
 
 def __clear_context():

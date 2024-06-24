@@ -1,5 +1,5 @@
 import pandas as pd
-
+from pg_sql.models import PgGoods
 dic_log_return = {'Расход': 0, 'Приход': 0, 'Доступы': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
 
 
@@ -30,3 +30,13 @@ def correction_date_pk_rnd(file_name, contract):
     if isinstance(_df_error, pd.DataFrame):
         _df_error.to_excel('расхождения.xlsx', index=False)
     return _df_order, _df_porder, _df_error
+
+
+def build_peresort(_file_name, _contract):
+    _df = pd.read_excel(_file_name)
+    _df.rename(columns={'Артикул': 'Код'}, inplace=True)
+    _f = '_goods.xlsx'
+    _df.to_excel(_f, index=False)
+    _res = PgGoods().get_goods_list_by_marking_goods(_file_marking_goods=_f, _contract=_contract)
+    # _res.to_excel(_f, index=False)
+    return _res

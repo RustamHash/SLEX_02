@@ -1,0 +1,60 @@
+{% extends 'base_app/home.html' %}
+
+{% block content %}
+    <div id="basic_div_menu">
+        <div class="sub_menu">
+            {% for report in reports %}
+                {% if operation_selected == report.slug %}
+                    <span class="selected"><a href="{% url 'reports' _filial_slug=filial.slug  %}">
+                        {{ report.name }}
+                    </a>
+                    </span>
+                {% else %}
+                    <span class="button_line">
+                        <a href="{% url 'reports' _filial_slug=filial.slug  %}">
+                        {{ report.name }}
+                        </a>
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% if operation %}
+        <div class="operation_div" id="operation_div">
+            {% if operation.load_file %}
+                <div class="form_div">
+                    <form class="operation_form" enctype="multipart/form-data" method="post"
+                          action="{% url 'event_load_file' _filial_slug=filial.slug _contract_slug=contract.slug _operation_slug=operation.slug %}">
+                        {% csrf_token %}
+                        <input class="inp_open_file" alt="file_name" type="file" name="file" id="file" accept=".xls, .xlsx">
+                        <input class="btn_open_file" id="submit_operation_load" type="submit" name="load_file_btn"
+                               value="{{ operation.btn_label }}">
+                    </form>
+                </div>
+            {% endif %}
+            {% if operation.search_goods %}
+                <div class="form_div">
+                    <form class="operation_form" enctype="multipart/form-data" method="post"
+                          action="{% url 'event_search_goods' _filial_slug=filial.slug _contract_slug=contract.slug _operation_slug=operation.slug %}">
+                        {% csrf_token %}
+                        <label>
+                            <input class="inp_search_file" name="search_input" type="search" placeholder="Введите артикул..."/>
+                        </label>
+                        <input class="btn_open_file" id="submit_operation_search" type="submit" name="search_btn"
+                               value="{{ operation.btn_label }}">
+                    </form>
+                </div>
+            {% endif %}
+            {% if operation.load_stock %}
+                <div class="form_div">
+                    <form class="operation_form" enctype="multipart/form-data" method="post"
+                          action="{% url 'event_load_stock' _filial_slug=filial.slug _contract_slug=contract.slug _operation_slug=operation.slug %}">
+                        {% csrf_token %}
+                        <input class="btn_open_file" id="submit_operation_load" type="submit" name="load_stock_btn"
+                               value="{{ operation.btn_label }}">
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}
