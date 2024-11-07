@@ -2,7 +2,7 @@ import pandas as pd
 from base_app.utils import data_to_dict, save_to_xml
 
 dic_log_return = {'Расход': 0, 'Приход': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
-dic_const = {'id_sklad': '16721221', 'id_client': '16718603', 'id_postav': '16718594', 'delivery_type': 2}
+dic_const = {'id_sklad': '17709369', 'id_client': '17709365', 'id_postav': '17709367', 'delivery_type': 2}
 
 NUM_DATE = 0
 NUM_TYPE = 1

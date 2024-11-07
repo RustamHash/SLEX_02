@@ -8,9 +8,13 @@ from base_app.models import Filial, Contracts, Menu, Operations, Reports
 from base_app.utils import comparison_stock
 from base_app.contract_models import neo_stroy_krd
 
-from base_app.contract_models.rnd import ok
+from base_app.contract_models.rnd import ok, ssk_rnd
 
-from base_app.contract_models.krd import toshev, kzvs, agro, soiprom
+from base_app.contract_models.krd import toshev, kzvs, agro, tander, konditery_kubani, ssk
+
+from base_app.contract_models.sochi import soiprom, ssk_sochi
+
+from base_app.contract_models.vlg import smit, dzhokej, atm
 
 from pg_sql.models import PgStocks, PgGoods
 from wms_app.models import WmsStocks, WmsGoods
@@ -24,7 +28,15 @@ dict_module = {
     'agrokompleks': agro,
     'neo-stroj-rostov': neo_stroy_krd,
     'ok': ok,
-    'soiprom': soiprom
+    'soiprom': soiprom,
+    'tander': tander,
+    'smit': smit,
+    'dzhokej': dzhokej,
+    'konditery-kubani': konditery_kubani,
+    'ssk-sochi': ssk_sochi,
+    'ssk': ssk,
+    'ssk-rnd': ssk_rnd,
+    'atm': atm
 }
 dict_operation = {
     'order_btn': False,
@@ -48,13 +60,13 @@ def home_filial(request, _filial_slug):
     __clear_context()
     context['filial'] = Filial.objects.get(slug=_filial_slug)
     context['menus'] = Menu.objects.filter(as_active=True, filial__id=context['filial'].id)
-    return render(request, f'base_app/home.html', context=context)
+    return render(request, f'base_app/home.html' , context=context)
 
 
 def show_contracts(request, **kwargs):
     __clear_context()
     context['menus'] = Contracts.objects.filter(as_active=True, filial__slug=context['filial'].slug)
-    return render(request, f'base_app/home.html', context=context)
+    return render(request, f'base_app/home.html' , context=context)
 
 
 def show_operations(request, **kwargs):

@@ -89,6 +89,7 @@ class WmsKrd:
                 self.params = f"$top={_top}"
             else:
                 self.params = f"{self.params}&$top={_top}"
+        print(self.full_url)
         response = requests.get(url=self.full_url, headers=self.headers, auth=self._auth, params=self.params)
         return response
 
@@ -127,6 +128,7 @@ class WmsStocks(WmsKrd, SaveFileWms):
     def get_goods_by_guid_group(self, _contract, top=None):
         self.contract_wms = _contract
         self.params = f"{self.params}&$filter=Номенклатура/Parent/Code eq '{str(self.contract_wms.id_groups_goods)}'"
+        print(self.params)
         if top is not None:
             self.params = f"{self.params}&$top={top}"
         response = self.connect()

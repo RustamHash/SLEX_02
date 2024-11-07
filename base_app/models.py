@@ -65,6 +65,9 @@ class Contracts(models.Model):
     id_groups_goods = models.IntegerField(default=0, verbose_name="Код папки товаров")
     id_groups_vod = models.IntegerField(default=0, verbose_name="Код папки водителей, для ОК")
     id_groups_vod_tls = models.IntegerField(default=0, verbose_name="Код папки водителей ТЛС, для ОК")
+    id_postav = models.IntegerField(default=0, verbose_name="Код поставщика", null=True, blank=True)
+    id_client = models.IntegerField(default=0, verbose_name="Код клиента", null=True, blank=True)
+    id_sklad = models.IntegerField(default=0, verbose_name="Код склада", null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -2,7 +2,7 @@ import pandas as pd
 from base_app.utils import data_to_dict, save_to_xml
 
 dic_log_return = {'Расход': 0, 'Приход': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
-dic_const = {'id_sklad': '16721221', 'id_client': '16718603', 'id_postav': '16718594', 'delivery_type': 2}
+dic_const = {'id_sklad': '16721220', 'id_client': '16721225', 'id_postav': '16721216', 'delivery_type': 2}
 
 NUM_DATE = 0
 NUM_TYPE = 1
@@ -22,6 +22,7 @@ def start(file_name, contract):
             __create_order(_df_order, contract)
         if len(_df_porder) > 0:
             __create_porder(_df_porder, contract)
+            __create_product(_df_porder, contract)
         return dic_log_return, True
     except Exception as e:
         return {'error': str(e)}, False
@@ -68,3 +69,40 @@ def __create_porder(_df, contract):
     dic_order = data_to_dict(df_porder)
     save_to_xml(dic_order, 'VendReceipt', contract=contract)
     dic_log_return['Приход'] += len(dic_order)
+
+
+def __create_product(_df, contract):
+    df_product = pd.DataFrame()
+    df_product['ItemId'] = _df[_df.columns[3]]
+    df_product['ItemName'] = _df[_df.columns[4]].astype(str)
+    df_product['NetWeight'] = 500
+    df_product['NetWeightBox'] = 500
+    df_product['NetWeightPack'] = 500
+    df_product['BruttoWeight'] = 500
+    df_product['BruttoWeightBox'] = 500
+    df_product['BruttoWeightPack'] = 500
+    df_product['Quantity'] = 1
+    df_product['standardShowBoxQuantity'] = 1
+    df_product['UnitId'] = 'шт'
+    df_product['Depth'] = 1200
+    df_product['Height'] = 1800
+    df_product['Width'] = 800
+    df_product['BoxDepth'] = 1200
+    df_product['BoxHeight'] = 1800
+    df_product['BoxWidth'] = 800
+    df_product['BlockDepth'] = 1200
+    df_product['BlockHeight'] = 1800
+    df_product['BlockWidth'] = 800
+    df_product['StandardPalletQuantity'] = 1
+    df_product['QtyPerLayer'] = 1
+    df_product['Price'] = 1
+    df_product['ShelfLife'] = 1095
+    df_product['EanBarcode'] = _df[_df.columns[3]]
+    df_product['EanBarcodeBox'] = _df[_df.columns[3]]
+    df_product['EanBarcodePack'] = _df[_df.columns[3]]
+    df_product['Gs1Barcode'] = _df[_df.columns[3]]
+    df_product['Gs1BarcodeBox'] = _df[_df.columns[3]]
+    df_product['Gs1BarcodePack'] = _df[_df.columns[3]]
+    dic_product = data_to_dict(df_product)
+    save_to_xml(dic_product, 'InventTable', contract=contract)
+    dic_log_return['Справочник товаров'] += len(dic_product)

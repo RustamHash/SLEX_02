@@ -7,9 +7,9 @@ from base_app.utils import data_to_dict, save_to_xml
 
 dic_log_return = {'Расход': 0, 'Приход': 0, 'Доступы': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
 dic_const = {}
-dic_const_krd = {'id_sklad': '16718149', 'id_client': '16718173', 'id_postav': '16718148', 'delivery_type': 2,
+dic_const_krd = {'id_sklad': '16718318', 'id_client': '16718173', 'id_postav': '16718148', 'delivery_type': 2,
                  'id_engineer': '16720118'}
-dic_const_sochi = {'id_sklad': '16718318', 'id_client': '16718173', 'id_postav': '16718148', 'delivery_type': 2,
+dic_const_sochi = {'id_sklad': '16718149', 'id_client': '16718173', 'id_postav': '16718148', 'delivery_type': 2,
                    'id_engineer': '16720118'}
 dic_const_rnd = {'id_sklad': '17017234', 'id_client': '17017253', 'id_postav': '17017238', 'delivery_type': 2,
                  'id_engineer': '17011254'}
@@ -20,7 +20,8 @@ NUM_QTY_ENGINEER = 52
 
 def start(file_name, contract):
     global dic_const, dic_const_sochi, dic_const_krd, dic_const_rnd
-    if contract.slug == 'neo-stroy-sochi':
+    print(contract.slug)
+    if contract.slug == 'neo-stroj-sochi':
         dic_const = dic_const_sochi
     elif contract.slug == 'neo-stroj-rostov':
         dic_const = dic_const_rnd
