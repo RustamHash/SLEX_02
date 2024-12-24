@@ -135,7 +135,6 @@ class PgStocks(PgConnection, SaveFile):
         if top is not None:
             self._sql = f'{self._sql} LIMIT {top}'
         self.df_stocks_save = self.connect()
-        print(self.df_stocks_save)
         _file_name_stock = self.save_reports_stock()
         return _file_name_stock
 
@@ -160,7 +159,7 @@ class PgStocks(PgConnection, SaveFile):
         if top is not None:
             self._sql = f'{self._sql} LIMIT {top}'
         self.df_stocks_save = self.connect()
-        self._sql = "SELECT id FROM store.agent WHERE group_id IN (17003663, 17012968)"
+        self._sql = f"SELECT id FROM store.agent WHERE group_id IN (17003663, 17012968)"
         res_df_store_vod = self.connect()
         res_df_store_vod['id'] = res_df_store_vod['id'].astype(int)
         _l_store_vod = res_df_store_vod['id'].values.tolist()

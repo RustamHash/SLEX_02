@@ -11,8 +11,6 @@ NUM_CLIENT = [11, 1]
 
 
 def start(file_name, contract):
-    print(file_name)
-    print(contract)
     for i in dic_log_return:
         dic_log_return[i] = 0
     try:

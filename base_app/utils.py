@@ -1,15 +1,22 @@
 import datetime
 import locale
 import os
+import time
 import xml.etree.ElementTree as ET
-from pprint import pprint
 from xml.dom import minidom
 
 import pandas as pd
 
 prefix_type_order = {1: 'CustPicking', 0: 'VendReceipt'}
-
-
+dic_log_return = {'Расход': 0, 'Приход': 0, 'Справочник товаров': 0, 'Справочник клиентов': 0}
+DIC_NUM_ART = {'NUM_DATE': 0,
+               'NUM_TYPE': 1,
+               'NUM_ORDER': 2,
+               'NUM_ART_PRODUCT': 3,
+               'NUM_NAME_PRODUCT': 4,
+               'NUM_QTY_PRODUCT': 5,
+               'NUM_COMMENT': 6
+               }
 def comparison_stock(__file_pg_stock, __file_wms_stock, _contract):
     __df_pg_stock = pd.read_excel(__file_pg_stock)
     __df_wms_stock = pd.read_excel(__file_wms_stock)
@@ -64,7 +71,6 @@ def start_client(data: dict, contract):
     new.attrib = {'xmlns:Table': x, 'version': y}
     title = ET.SubElement(new, 'transaction')
     title.attrib = {'version': y}
-    print(data)
     for key, value in data.items():
         title1 = ET.SubElement(title, 'Table:Record')
         title1.attrib = {'name': const_name, 'row': str(key + 1)}
@@ -129,8 +135,9 @@ def __create_date_folder_name():
 
 def __create_date_file_name():
     _dt = datetime.datetime.now()
-    _dt = _dt.strftime("%d%m%y")
+    _dt = _dt.strftime("%d%m%y%H%M%S")
     _dt = str(_dt)
+    time.sleep(0.0006)
     return _dt
 
 
@@ -155,3 +162,9 @@ def __exists_create_folder(_contract):
     if not os.path.exists(path_files):
         os.makedirs(path_files)
     return path_files
+
+
+def generator_bar_code():
+    bar_code = int(round(time.time() * 1000))
+    time.sleep(0.0006)
+    return bar_code

@@ -31,19 +31,15 @@ def __load_file(_wb_file, contract):
                     'Itemid': [],
                     }
     _df = pd.read_excel(_wb_file, header=None, dtype='object')
-    # _df.dropna(subset=_df.columns[1], inplace=True)
-    # _df.reset_index(drop=True, inplace=True)
-    # print(_df.to_markdown())
-    if 'отгрузку' in _df.iloc[0, 3]:
+    if 'отгрузку' in str(_df.iloc[0, 3]):
         __parse_order(_df_order=_df, __dict_order=__dict_order, contract=contract)
-    # if 'приемку' in _df.iloc[0, 3]:
-    #     print('order false')
-    #     __parse_porder(_df_porder=_df, __dict_order=__dict_order, contract=contract)
+    else:
+        __parse_porder(_df_porder=_df, __dict_order=__dict_order, contract=contract)
 
 
 def __parse_porder(_df_porder, __dict_order, contract):
     dic_const['type_order'] = 'Приход'
-    dic_const['DeliveryDate'] = _df_porder.iloc[2, 3]
+    dic_const['DeliveryDate'] = __create_date()
     dic_const['SalesId'] = _df_porder.iloc[1, 3]
     dic_const['Comment'] = _df_porder.iloc[2, 3]
 
@@ -60,14 +56,11 @@ def __parse_porder(_df_porder, __dict_order, contract):
 
 
 def __parse_order(_df_order, __dict_order, contract):
-    print('order')
-    # print(_df_order.to_markdown())
     dic_const['type_order'] = 'Расход'
-    dic_const['DeliveryDate'] = _df_order.iloc[2, 3][3:100]
+    dic_const['DeliveryDate'] = __create_date()
     dic_const['SalesId'] = _df_order.iloc[1, 3][2:100]
     dic_const['Comment'] = _df_order.iloc[22, 1][17:100]
     dic_const['ConsigneeAccount'] = dic_const['id_client']
-    # print(_df_order.to_markdown())
     _df_order.dropna(subset=_df_order.columns[2], inplace=True)
     _df_order.reset_index(drop=True, inplace=True)
     for index, row in _df_order.iloc[1:30, :].iterrows():
@@ -115,3 +108,9 @@ def __create_porder_data(__dict_order, _contract):
     dic_porder = data_to_dict(df_porder)
     save_to_xml(data=dic_porder, type_order='VendReceipt', contract=_contract)
     dic_log_return['Приход'] += len(dic_porder)
+
+
+def __create_date():
+    import datetime
+    _dt = datetime.datetime.now().date() + datetime.timedelta(days=1)
+    return _dt

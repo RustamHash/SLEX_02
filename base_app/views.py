@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 
 from base_app.models import Filial, Contracts, Menu, Operations, Reports
 from base_app.utils import comparison_stock
-from base_app.contract_models import neo_stroy_krd
+from base_app.contract_models import neo_stroy_krd, zelandiya
 
 from base_app.contract_models.rnd import ok, ssk_rnd
 
@@ -14,7 +14,7 @@ from base_app.contract_models.krd import toshev, kzvs, agro, tander, konditery_k
 
 from base_app.contract_models.sochi import soiprom, ssk_sochi
 
-from base_app.contract_models.vlg import smit, dzhokej, atm
+from base_app.contract_models.vlg import smit, dzhokej, atm, sady
 
 from pg_sql.models import PgStocks, PgGoods
 from wms_app.models import WmsStocks, WmsGoods
@@ -36,7 +36,11 @@ dict_module = {
     'ssk-sochi': ssk_sochi,
     'ssk': ssk,
     'ssk-rnd': ssk_rnd,
-    'atm': atm
+    'atm': atm,
+    'zelandiya_krd': zelandiya,
+    'zelandiya_rnd': zelandiya,
+    'zelandiya_vlg': zelandiya,
+    'sady': sady,
 }
 dict_operation = {
     'order_btn': False,
@@ -60,13 +64,20 @@ def home_filial(request, _filial_slug):
     __clear_context()
     context['filial'] = Filial.objects.get(slug=_filial_slug)
     context['menus'] = Menu.objects.filter(as_active=True, filial__id=context['filial'].id)
-    return render(request, f'base_app/home.html' , context=context)
+    return render(request, f'base_app/home.html', context=context)
+
+
+def show_test(request, **kwargs):
+    context['choice_contracts'] = Contracts.objects.filter(as_active=True, filial__id=context['filial'].id)
+    from .forms import SverkiForm
+    context['form'] = SverkiForm(choice_contracts=context['choice_contracts'])
+    return render(request, f'base_app/test.html', context=context)
 
 
 def show_contracts(request, **kwargs):
     __clear_context()
     context['menus'] = Contracts.objects.filter(as_active=True, filial__slug=context['filial'].slug)
-    return render(request, f'base_app/home.html' , context=context)
+    return render(request, f'base_app/home.html', context=context)
 
 
 def show_operations(request, **kwargs):
@@ -86,6 +97,21 @@ def show_choice_operation(request, **kwargs):
 
 
 def event_load_file(request, **kwargs):
+    if kwargs['_operation_slug'] == 'comparison_stock_ka':
+        _file = request.FILES['file']
+        try:
+            context['result'] = dict_module[context['contract'].slug].start(_file, context['contract'])
+            return FileResponse(open(context['result'], 'rb'))
+        except Exception as e:
+            context['result'] = {'error': e}
+    if kwargs['_operation_slug'] == 'check_goods_in_pg':
+        _file = request.FILES['file']
+        context['result'] = PgGoods().get_goods_list_by_marking_goods(_file_marking_goods=_file,
+                                                                      _contract=context['contract'])
+        try:
+            return FileResponse(open(context['result'], 'rb'))
+        except Exception as e:
+            context['result'] = {'error': e}
     if kwargs['_contract_slug'] == 'ok':
         if kwargs['_operation_slug'] == 'check_goods_in_pg':
             _file = request.FILES['file']
@@ -98,12 +124,23 @@ def event_load_file(request, **kwargs):
 
     if kwargs['_operation_slug'] == 'build_peresort':
         _file = request.FILES['file']
-        print(_file)
         context['result'] = ok.build_peresort(_file_name=_file, _contract=context['contract'])
         try:
             return FileResponse(open(context['result'], 'rb'))
         except Exception as e:
             context['result'] = {'error': e}
+    if kwargs['_operation_slug'] == 'add_goods':
+        file = request.FILES.get('file', False)
+        if file:
+            res, error_valid = dict_module[context['contract'].slug].add_goods(file, context['contract'])
+            if not error_valid:
+                if isinstance(res, dict):
+                    context['result'] = res
+                else:
+                    context['result'] = {'error': f'Ошибка обработки\n{res}'}
+                return render(request, f'base_app/show_result.html', context=context)
+            context['result'] = res
+            return render(request, f'base_app/show_result.html', context=context)
 
     if request.method == 'POST':
         file = request.FILES.get('file', False)
@@ -139,9 +176,10 @@ def event_search_goods(request, **kwargs):
 
 
 def event_load_stock(request, **kwargs):
+    # print(kwargs['_operation_slug'])
     if kwargs['_operation_slug'] == 'comparison-stock':
         __file_pg_stock = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
-        __file_wms_stock = WmsStocks().get_goods_by_guid_group(_contract=context['contract'])
+        __file_wms_stock = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(_contract=context['contract'])
         context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
                                              __file_wms_stock=__file_wms_stock)
         try:
@@ -161,7 +199,7 @@ def event_load_stock(request, **kwargs):
             context['result'] = _dict_file_name
             return render(request, f'base_app/show_result.html', context=context)
         elif kwargs['_operation_slug'] == 'load_stock_wms':
-            context['result'] = WmsStocks().get_goods_by_guid_group(_contract=context['contract'])
+            context['result'] = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(_contract=context['contract'])
         try:
             return FileResponse(open(context['result'], 'rb'))
         except Exception as e:
@@ -173,6 +211,21 @@ def event_load_stock(request, **kwargs):
 def show_reports(request, **kwargs):
     reports = context['filial'].reports.filter(as_active=True)
     context['reports'] = reports
+    return render(request, f'base_app/reports.html', context=context)
+
+
+def show_reports_operation(request, **kwargs):
+    context['report'] = Reports.objects.get(slug=kwargs['_reports_slug'])
+    context['contracts'] = Contracts.objects.filter(as_active=True, filial__slug=context['filial'].slug)
+    from .forms import SverkiForm
+    context['form'] = SverkiForm()
+    context['report_selected'] = kwargs['_reports_slug']
+    return render(request, f'base_app/reports.html', context=context)
+
+
+def report_sverki(request, **kwargs):
+    context['report'] = Reports.objects.get(slug=kwargs['_reports_slug'])
+    context['report_selected'] = kwargs['_reports_slug']
     return render(request, f'base_app/reports.html', context=context)
 
 

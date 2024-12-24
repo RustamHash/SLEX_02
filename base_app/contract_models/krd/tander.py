@@ -78,7 +78,7 @@ def __create_order(_df, contract):
     df_order['Qty'] = _df[_df.columns[NUM_QTY_PRODUCT]]
     df_order['SalesId'] = _df[_df.columns[NUM_ORDER]]
     df_order['InventLocationId'] = dic_const['id_sklad']
-    df_order['ConsigneeAccount'] = _df[_df.columns[NUM_CLIENT]]
+    df_order['ConsigneeAccount'] = _df[_df.columns[NUM_CLIENT]].apply(lambda x: f'tnd{x}')
     df_order['DeliveryDate'] = _df[_df.columns[NUM_DATE]]
     df_order['ManDate'] = _df[_df.columns[NUM_MAN_DATE]]
     df_order['ManDate'] = df_order['ManDate'].fillna(_df[_df.columns[NUM_DATE]])

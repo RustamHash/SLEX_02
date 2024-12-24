@@ -65,7 +65,7 @@ class SaveFileWms:
 
 
 class WmsKrd:
-    def __init__(self, ):
+    def __init__(self, _contract):
         super(WmsKrd, self).__init__()
         self.headers = {
             'Content-Type': 'application/json',
@@ -73,7 +73,8 @@ class WmsKrd:
             'Connection': 'keep-alive'
         }
         self.server = '172.172.185.67'
-        self.infobase = 'krd_itc_wms'
+        # self.infobase = 'krd_itc_wms'
+        self.infobase = str(_contract.filial.url_wms)
         self.username = 'ODUser'
         self.password = 249981
         self.params = None
@@ -84,19 +85,20 @@ class WmsKrd:
         self._auth = requests.auth.HTTPBasicAuth(self.username, self.password)
 
     def connect(self, _top=None):
+
         if _top is not None:
             if self.params is None:
                 self.params = f"$top={_top}"
             else:
                 self.params = f"{self.params}&$top={_top}"
-        print(self.full_url)
         response = requests.get(url=self.full_url, headers=self.headers, auth=self._auth, params=self.params)
         return response
 
 
 class WmsStocks(WmsKrd, SaveFileWms):
-    def __init__(self):
-        super(WmsStocks, self).__init__()
+    def __init__(self, _contract=None):
+        super(WmsStocks, self).__init__(_contract=_contract)
+        super().__init__(_contract)
         self.cat_name = 'ОстаткиВПоллетах'
         self.params = (f"$select="
                        # f"*"
@@ -116,6 +118,7 @@ class WmsStocks(WmsKrd, SaveFileWms):
                          )
 
     def get_good_by_art(self, good_art, _contract):
+        self.infobase = _contract.filial.url_wms
         self.contract_wms = _contract
         self.params = f"{self.params}&$filter=Номенклатура/Артикул eq'{good_art}'"
         response = self.connect()
@@ -126,9 +129,9 @@ class WmsStocks(WmsKrd, SaveFileWms):
         return _file_name
 
     def get_goods_by_guid_group(self, _contract, top=None):
+        self.infobase = _contract.filial.url_wms
         self.contract_wms = _contract
         self.params = f"{self.params}&$filter=Номенклатура/Parent/Code eq '{str(self.contract_wms.id_groups_goods)}'"
-        print(self.params)
         if top is not None:
             self.params = f"{self.params}&$top={top}"
         response = self.connect()
@@ -147,6 +150,7 @@ class WmsGoods(WmsKrd, SaveFileWms):
         self.full_url = f'{self.full_url}/Catalog_{self.cat_name}'
 
     def get_good_by_art(self, good_art, _contract):
+        self.infobase = _contract.filial.url_wms
         self.contract_wms = _contract
         self.params = f"{self.params}&$filter=Артикул eq'{good_art}'"
         response = self.connect()
@@ -157,6 +161,7 @@ class WmsGoods(WmsKrd, SaveFileWms):
         return _file_name
 
     def get_goods_by_guid_group(self, _contract, top=None):
+        self.infobase = _contract.filial.url_wms
         self.contract_wms = _contract
         self.params = f"{self.params}&$filter=Parent_Key eq '{str(self.contract_wms.id_groups_goods)}'"
         if top is not None:

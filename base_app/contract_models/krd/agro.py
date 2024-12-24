@@ -135,7 +135,7 @@ def __create_structura_xml(data: dict):
     new.attrib = {'version': "1.0", 'encoding': "utf-8"}
     message = et.SubElement(new, 'Message')
     base_id = et.SubElement(message, 'BaseID')
-    base_id.text = 'AGRO'
+    base_id.text = f'AGRO_{str(_dt)}'
 
     documents = et.SubElement(message, 'Documents')
     for i, key in enumerate(data):

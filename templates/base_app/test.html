@@ -1,0 +1,20 @@
+{% extends 'base_app/base_templates.html' %}
+
+{% block content %}
+    <div>
+        {% if choice_contracts %}
+            <div class="form_div">
+                {{ form }}
+                <input id="click_ok" type="button" name="your_name" value="test" maxlength="100" required>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{#            {% if choice_contracts %}#}
+{#            <div class="operation_div" id="operation_div">#}
+{#            <div class="form_div">#}
+{#                {{ form }}#}
+{#                <input id="click_ok" type="button" name="your_name" value="test" maxlength="100" required>#}
+{#            </div>#}
+{#        {% endif %}#}

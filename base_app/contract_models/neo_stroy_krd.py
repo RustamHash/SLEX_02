@@ -20,7 +20,6 @@ NUM_QTY_ENGINEER = 52
 
 def start(file_name, contract):
     global dic_const, dic_const_sochi, dic_const_krd, dic_const_rnd
-    print(contract.slug)
     if contract.slug == 'neo-stroj-sochi':
         dic_const = dic_const_sochi
     elif contract.slug == 'neo-stroj-rostov':
@@ -132,7 +131,6 @@ def __create_porder(_df, contract, engineer):
     df_porder['PurchTTN'] = 1
     df_porder['Price'] = 1
     df_porder['Comment'] = _df[_df.columns[1]]
-    # print(df_porder.to_markdown())
     dic_porder = data_to_dict(df_porder)
     save_to_xml(dic_porder, 'VendReceipt', contract=contract)
     if engineer:
