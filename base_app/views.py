@@ -12,7 +12,7 @@ from base_app.contract_models.rnd import ok, ssk_rnd
 
 from base_app.contract_models.krd import toshev, kzvs, agro, tander, konditery_kubani, ssk
 
-from base_app.contract_models.sochi import soiprom, ssk_sochi
+from base_app.contract_models.sochi import ssk_sochi
 
 from base_app.contract_models.vlg import smit, dzhokej, atm, sady
 
@@ -28,7 +28,6 @@ dict_module = {
     'agrokompleks': agro,
     'neo-stroj-rostov': neo_stroy_krd,
     'ok': ok,
-    'soiprom': soiprom,
     'tander': tander,
     'smit': smit,
     'dzhokej': dzhokej,
