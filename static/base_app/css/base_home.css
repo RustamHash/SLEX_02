@@ -1,8 +1,14 @@
+body {
+    background-color: #9a48ea;
+    /*background-color: #87CEEB;*/
+}
+
+
 #container_header {
     font-style: normal;
     border: 1px solid RGB(200, 200, 200);
     border-radius: 4px;
-    margin: 5px auto;
+    margin: 40px auto;
     width: 90%;
     /*padding: 10px;*/
 }
