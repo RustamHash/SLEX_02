@@ -116,15 +116,56 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-TMP_FOLDER = '/tmp_files/'
+STATIC_URL = "static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-# STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-TEMPLATE_DIR = [os.path.join(BASE_DIR, "templates")]
+MEDIA_ROOT = (BASE_DIR / 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL = '/'
+
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+TEMPLATE_DIR = [os.path.join(BASE_DIR, "templates")]
+
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = False
+#
+# CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['http://*.railway.app']
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(name)-12s %(levelname)-8s %(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'debug.log'
+        }
+    },
+    'loggers': {
+        '': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file']
+        }
+    }
+}
+
