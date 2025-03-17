@@ -5,7 +5,7 @@ import datetime
 import xml.etree.ElementTree as et
 from xml.dom import minidom
 
-list_columns = ['Номер', 'От кого', 'Адрес доставки']
+list_columns = ['Номер', 'От кого', 'Адрес доставки', 'Дата']
 
 file_name_save = 'agro11.xml'
 
@@ -19,29 +19,32 @@ dic_log_return = {'Маршруты': 0}
 error_dict = {}
 
 
-def start(file_name, contract):
+def start(file_name, kwargs):
     error_dict.clear()
     try:
         for key, value in dic_log_return.items():
             dic_log_return[key] = 0
         df = __load_file(file_name)
-        __flag = __response_columns_file(df)
-        if __flag:
-            if df.shape[0] >= 1:
-                x = __parse_dataframe(df)
-                if x:
-                    __create_structura_xml(x)
-                    res = __post()
-                    list_deliver = __parse_response_xml(res)
-                    dic_log_return['Маршруты'] += len(list_deliver)
-                else:
-                    error_dict['Ошибка xml'] = f'Ошибка создания xml файла!'
-            else:
-                error_dict['Ошибка файла'] = f'Ошибка чтения файла {file_name}'
-        if len(error_dict) > 0:
-            return error_dict, False
+        if kwargs['_operation_slug'] == 'build_route_list_date':
+            pass
         else:
-            return dic_log_return, True
+            __flag = __response_columns_file(df)
+            if __flag:
+                if df.shape[0] >= 1:
+                    x = __parse_dataframe(df)
+                    if x:
+                        __create_structura_xml(x)
+                        res = __post()
+                        list_deliver = __parse_response_xml(res)
+                        dic_log_return['Маршруты'] += len(list_deliver)
+                    else:
+                        error_dict['Ошибка xml'] = f'Ошибка создания xml файла!'
+                else:
+                    error_dict['Ошибка файла'] = f'Ошибка чтения файла {file_name}'
+            if len(error_dict) > 0:
+                return error_dict, False
+            else:
+                return dic_log_return, True
     except Exception as e:
         error_dict['Ошибка: '] = str(e)
         return error_dict, False
@@ -81,7 +84,12 @@ def __load_file(__filename):
 def __parse_dataframe(__df):
     __dict_delivery = {}
     try:
-        __df['Адрес доставки'] = ('AGRO' + '_' + __df['От кого'] + "_" + __df['Адрес доставки'])
+        __df['Дата'] = __df['Дата'].dt.strftime('%d%m%Y')
+    except:
+        error_dict['Ошибка файла'] = f'Ошибка преобразования даты с троку'
+    try:
+        __df['Адрес доставки'] = ('AGRO' + '_' + __df['От кого'] + "_" + __df['Адрес доставки'] + '_' + __df['Дата'])
+        # __df['Адрес доставки'] = ('AGRO' + '_' + __df['От кого'] + "_" + __df['Адрес доставки'])
         __keys = __df['Адрес доставки'].to_list()
         keys = set(__keys)
         for key in keys:
@@ -107,9 +115,10 @@ def __save_xml(xml_code):
 
 
 def __create_number():
-    # _dt = datetime.datetime.now().date() + datetime.timedelta(days=1)
+    # _dt = datetime.datetime.now().date() + datetime.timedelta(days=3)
     _dt = datetime.datetime.now().date()
     _str_dt = _dt.strftime('%d%m%Y')
+    # _str_dt = '03022025'
     return _str_dt
 
 
@@ -130,12 +139,13 @@ def __create_sklad(data: str):
 
 
 def __create_structura_xml(data: dict):
+    print(data)
     _dt = __create_date()
     new = et.Element('xml')
     new.attrib = {'version': "1.0", 'encoding': "utf-8"}
     message = et.SubElement(new, 'Message')
     base_id = et.SubElement(message, 'BaseID')
-    base_id.text = f'AGRO_{str(_dt)}'
+    base_id.text = 'AGRO'
 
     documents = et.SubElement(message, 'Documents')
     for i, key in enumerate(data):
@@ -143,19 +153,20 @@ def __create_structura_xml(data: dict):
         type_delivery = et.SubElement(document, 'Type')
         type_delivery.text = TYPE_DELIVERY
         number = et.SubElement(document, 'Number')
-        number.text = __create_number() + "_" + str(i + 1)
+        # number.text = __create_number() + "_" + str(i + 1)
+        # number.text = "AGRO_" + str(i + 1)
+        number.text = key.split('_')[-1] + '_' + str(i + 1)
         date = et.SubElement(document, 'Date')
         date.text = __create_date()
+        # date.text = key.split('_')[-1]
         driver = et.SubElement(document, 'Driver')
-        # driver.text = str(key)
-        driver.text = key.split('_')[-1]
+        # driver.text = key.split('_')[-1]
+        driver.text = key.split('_')[-2]
         login_num = et.SubElement(document, 'LoadingNum')
         login_num.text = LoadingNum
         login_time = et.SubElement(document, 'LoadingTime')
         login_time.text = LoadingTime
         truc_id = et.SubElement(document, 'TruckID')
-        # truc_id.text = TruckID
-        # truc_id.text = str(key)
         truc_id.text = __create_sklad(str(key))
         comment = et.SubElement(document, 'Comment')
         comment.text = str(key)
@@ -186,4 +197,5 @@ def __post():
     with open(file_name_save, 'rb') as file:
         # __res = session.post(url, headers=headers, data=file)
         __res = requests.post(url, headers=headers, data=file)
+        print(__res)
     return __res

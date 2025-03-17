@@ -70,6 +70,9 @@ def show_test(request, **kwargs):
     context['choice_contracts'] = Contracts.objects.filter(as_active=True, filial__id=context['filial'].id)
     from .forms import SverkiForm
     context['form'] = SverkiForm(choice_contracts=context['choice_contracts'])
+    print(request.method)
+    if request.method == 'POST':
+        context['data'] = request.POST
     return render(request, f'base_app/test.html', context=context)
 
 
@@ -144,7 +147,10 @@ def event_load_file(request, **kwargs):
     if request.method == 'POST':
         file = request.FILES.get('file', False)
         if file:
-            res, error_valid = dict_module[context['contract'].slug].start(file, context['contract'])
+            if context['contract'].slug == 'agrokompleks':
+                res, error_valid = dict_module[context['contract'].slug].start(file, kwargs)
+            else:
+                res, error_valid = dict_module[context['contract'].slug].start(file, context['contract'])
             if not error_valid:
                 if isinstance(res, dict):
                     context['result'] = res
@@ -175,10 +181,11 @@ def event_search_goods(request, **kwargs):
 
 
 def event_load_stock(request, **kwargs):
-    # print(kwargs['_operation_slug'])
+    print(kwargs['_operation_slug'])
     if kwargs['_operation_slug'] == 'comparison-stock':
         __file_pg_stock = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
-        __file_wms_stock = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(_contract=context['contract'])
+        __file_wms_stock = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(
+            _contract=context['contract'])
         context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
                                              __file_wms_stock=__file_wms_stock)
         try:
@@ -198,7 +205,8 @@ def event_load_stock(request, **kwargs):
             context['result'] = _dict_file_name
             return render(request, f'base_app/show_result.html', context=context)
         elif kwargs['_operation_slug'] == 'load_stock_wms':
-            context['result'] = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(_contract=context['contract'])
+            context['result'] = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(
+                _contract=context['contract'])
         try:
             return FileResponse(open(context['result'], 'rb'))
         except Exception as e:

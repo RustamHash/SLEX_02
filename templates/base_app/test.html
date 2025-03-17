@@ -3,11 +3,18 @@
 {% block content %}
     <div>
         {% if choice_contracts %}
-            <div class="form_div">
+            <div class="form_div" >
+            <form method="post" >
                 {{ form }}
                 <input id="click_ok" type="button" name="your_name" value="test" maxlength="100" required>
+            </form>
+                
             </div>
         {% endif %}
+    {% if data %}
+        {{ data }}
+    {% endif %}
+    <p>TEST</p>
     </div>
 {% endblock %}
 

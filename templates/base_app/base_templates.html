@@ -72,106 +72,64 @@
     {% endblock %}
 </div>
 
-{% block Santa %}
-    <div class="santa"><img src="https://mnogoblog.ru/wp-content/uploads/2015/12/santasled.gif" alt=""/></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var windowWidth = $(document).width();
-            var santa = $('santa');
-            santa_right_pos = windowWidth + santa.width();
-            santa.right = santa_right_pos;
+{#{% block Santa %}#}
+{#    <div class="santa"><img src="https://mnogoblog.ru/wp-content/uploads/2015/12/santasled.gif" alt=""/></div>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>#}
+{#    <script type="text/javascript">#}
+{#        $(document).ready(function () {#}
+{#            var windowWidth = $(document).width();#}
+{#            var santa = $('santa');#}
+{#            santa_right_pos = windowWidth + santa.width();#}
+{#            santa.right = santa_right_pos;#}
+{##}
+{#            function movesanta() {#}
+{#                santa.animate({right: windowWidth + santa.width()}, 15000, function () {#}
+{#                    santa.css("right", "-500px");#}
+{#                    setTimeout(function () {#}
+{#                        movesanta();#}
+{#                    }, 10000);#}
+{#                });#}
+{#            }#}
+{##}
+{#            movesanta();#}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}
 
-            function movesanta() {
-                santa.animate({right: windowWidth + santa.width()}, 15000, function () {
-                    santa.css("right", "-500px");
-                    setTimeout(function () {
-                        movesanta();
-                    }, 10000);
-                });
-            }
 
-            movesanta();
-        });
-    </script>
-{% endblock %}
-{% block NewYear %}
-    <div id="gir_top"></div>
-    <div id="nums_1_top"></div>
-    {#    <div id="gir"></div>#}
-    <div id="nums_1"></div>
-
-    <script>
-        function gir() {
-            nums = document.getElementById('nums_1').innerHTML
-            if (nums == 1) {
-                document.getElementById('gir').className = 'gir_1';
-                document.getElementById('nums_1').innerHTML = '2'
-            }
-            if (nums == 2) {
-                document.getElementById('gir').className = 'gir_2';
-                document.getElementById('nums_1').innerHTML = '3'
-            }
-            if (nums == 3) {
-                document.getElementById('gir').className = 'gir_3';
-                document.getElementById('nums_1').innerHTML = '1'
-            }
-        }
-
-        function gir_top() {
-            nums = document.getElementById('nums_1_top').innerHTML
-            if (nums == 1) {
-                document.getElementById('gir_top').className = 'gir_1_top';
-                document.getElementById('nums_1_top').innerHTML = '2'
-            }
-            if (nums == 2) {
-                document.getElementById('gir_top').className = 'gir_2_top';
-                document.getElementById('nums_1_top').innerHTML = '3'
-            }
-            if (nums == 3) {
-                document.getElementById('gir_top').className = 'gir_3_top';
-                document.getElementById('nums_1_top').innerHTML = '1'
-            }
-        }
-
-        setInterval(function () {
-            gir()
-        }, 500)</script>
-{% endblock %}
-
-{% block new_year_1 %}
-    <script src="https://uguide.su/new_year/1/Snow.min.js"></script>
-    <script>
-        new Snow();
-    </script>
-    <script>
-        new Snow({
-            iconColor: "#a6e7ff", //цвет снежинок
-            iconSize: 20, //размер снежинок
-            icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="#000000">
-                <path d="M 6 6 L 6 26 L 26 26 L 26 6 L 6 6 z"/>
-            </svg>,
-            showSnowBalls: true,
-            showSnowBallsIsMobile:
-                true, //отдельная опция сугробов на мобилках
-            showSnowflakes:
-                true, //включение или отключение снегопада
-            countSnowflake:
-                100, //количество снежинок на экране, не более 100
-            snowBallsLength:
-                10, // число сугробов, не более 10
-            snowBallIterations:
-                40, // итерации роста сугроба, от 10 до 40
-            snowBallupNum:
-                1, // пиксели роста в течение одной итерации, не более 3
-            snowBallIterationsInterval:
-                2000, // скорость роста сугроба в миллисекундах, то есть 1000 миллисекунд = 1 секунда
-            clearSnowBalls:
-                10000, // время, через которое машинка убирает сугробы, здесь это 20 секунд
-        })
-        ;
-    </script>
-{% endblock %}
+{#{% block new_year_1 %}#}
+{#    <script src="https://uguide.su/new_year/1/Snow.min.js"></script>#}
+{#    <script>#}
+{#        new Snow();#}
+{#    </script>#}
+{#    <script>#}
+{#        new Snow({#}
+{#            iconColor: "#a6e7ff", //цвет снежинок#}
+{#            iconSize: 20, //размер снежинок#}
+{#            icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="#000000">#}
+{#                <path d="M 6 6 L 6 26 L 26 26 L 26 6 L 6 6 z"/>#}
+{#            </svg>,#}
+{#            showSnowBalls: true,#}
+{#            showSnowBallsIsMobile:#}
+{#                true, //отдельная опция сугробов на мобилках#}
+{#            showSnowflakes:#}
+{#                true, //включение или отключение снегопада#}
+{#            countSnowflake:#}
+{#                100, //количество снежинок на экране, не более 100#}
+{#            snowBallsLength:#}
+{#                10, // число сугробов, не более 10#}
+{#            snowBallIterations:#}
+{#                40, // итерации роста сугроба, от 10 до 40#}
+{#            snowBallupNum:#}
+{#                1, // пиксели роста в течение одной итерации, не более 3#}
+{#            snowBallIterationsInterval:#}
+{#                2000, // скорость роста сугроба в миллисекундах, то есть 1000 миллисекунд = 1 секунда#}
+{#            clearSnowBalls:#}
+{#                10000, // время, через которое машинка убирает сугробы, здесь это 20 секунд#}
+{#        })#}
+{#        ;#}
+{#    </script>#}
+{#{% endblock %}#}
 
 </body>
 </html>

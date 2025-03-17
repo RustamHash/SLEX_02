@@ -50,7 +50,7 @@ def __load_parse_file(_wb_file):
     _df = pd.read_excel(_wb_file, dtype=object)
     _df_order, _df_porder = pd.DataFrame(), pd.DataFrame()
     _ka = False
-    if str(_wb_file).lower().find("вс") > 0:
+    if str(_wb_file).lower().find("вс") > 0 or str(_wb_file).lower().find("отгрузок") > 0:
         _df['Код РЦ Отправителя'] = _df['Код РЦ Отправителя'].astype(int)
         _df['Код РЦ Получателя'] = _df['Код РЦ Получателя'].astype(str)
         _df_order = _df[_df['Код РЦ Отправителя'] == dic_const['id_sklad']].copy()
