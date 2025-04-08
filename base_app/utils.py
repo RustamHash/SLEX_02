@@ -4,6 +4,7 @@ import os
 import time
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+from ftplib import FTP
 
 import pandas as pd
 
@@ -17,6 +18,8 @@ DIC_NUM_ART = {'NUM_DATE': 0,
                'NUM_QTY_PRODUCT': 5,
                'NUM_COMMENT': 6
                }
+
+
 def comparison_stock(__file_pg_stock, __file_wms_stock, _contract):
     __df_pg_stock = pd.read_excel(__file_pg_stock)
     __df_wms_stock = pd.read_excel(__file_wms_stock)
@@ -45,10 +48,6 @@ def data_to_dict(df):
         name_col = 'PurchId'
     elif 'Quantity' in df.columns:
         name_col = 'ItemId'
-        # for i in df[name_col]:
-        #     dic_order[0] = None
-        # for key in dic_order.keys():
-        #     _df = df[df[name_col] == key].copy().reset_index(drop=True)
         dic_order[0] = df.to_dict('index')
         return dic_order
     elif 'CustVendID' in df.columns:
@@ -82,7 +81,12 @@ def start_client(data: dict, contract):
     __save_xml(save_file_name, new)
 
 
+
+
+
 def save_to_xml(data: dict, type_order, contract):
+    # __dict_ftp_param = {'HOST': 'ftp.rnd.gk21.ru', 'USERNAME': 'ynigra', 'PASSWORD': 'EaDGruteS25',
+    #                     'DIRECTORY': 'krs/in'}
     for k1, v1 in data.items():
         const_name = f'{str(type_order)}ExportDC'
         new = ET.Element('AxaptaXMLExport')
@@ -99,7 +103,9 @@ def save_to_xml(data: dict, type_order, contract):
                 row.attrib = {'name': k}
                 row.text = str(v)
         save_file_name = __create_name_file_save_xml(str(k1), str(type_order), contract)
+
         __save_xml(save_file_name, new)
+        # upload_ftp(filenames=save_file_name, **__dict_ftp_param)
 
 
 def __save_reports_stock_to_excel(_contract, _df_stocks_save, _type_reports):
@@ -168,3 +174,16 @@ def generator_bar_code():
     bar_code = int(round(time.time() * 1000))
     time.sleep(0.0006)
     return bar_code
+
+
+def upload_ftp(filenames, **kwargs):
+    x = os.path.basename(filenames)
+    with FTP(host=kwargs['HOST'], user=kwargs['USERNAME'], passwd=kwargs['PASSWORD']) as _ftp:
+        _ftp.cwd(kwargs['DIRECTORY'])
+        _ftp.encoding = 'utf-8'
+        # for filename in filenames:
+        with open(filenames, 'rb') as file_name:
+            _ftp.storbinary(f'STOR {x}', file_name)
+        file_names_ftp = _ftp.nlst()
+        _ftp.quit()
+    return file_names_ftp

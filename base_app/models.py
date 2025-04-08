@@ -68,6 +68,8 @@ class Contracts(models.Model):
     id_postav = models.IntegerField(default=0, verbose_name="Код поставщика", null=True, blank=True)
     id_client = models.IntegerField(default=0, verbose_name="Код клиента", null=True, blank=True)
     id_sklad = models.IntegerField(default=0, verbose_name="Код склада", null=True, blank=True)
+    id_agent = models.IntegerField(default=0, verbose_name="Код агента", null=True, blank=True)
+    delivery_type = models.IntegerField(default=2, verbose_name="Тип доставки")
 
     def __str__(self):
         return self.name

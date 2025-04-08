@@ -10,7 +10,7 @@ from base_app.contract_models import neo_stroy_krd, zelandiya
 
 from base_app.contract_models.rnd import ok, ssk_rnd
 
-from base_app.contract_models.krd import toshev, kzvs, agro, tander, konditery_kubani, ssk
+from base_app.contract_models.krd import toshev, kzvs, agro, tander, konditery_kubani, ssk, unigra
 
 from base_app.contract_models.sochi import ssk_sochi
 
@@ -40,6 +40,7 @@ dict_module = {
     'zelandiya_rnd': zelandiya,
     'zelandiya_vlg': zelandiya,
     'sady': sady,
+    'unigra': unigra
 }
 dict_operation = {
     'order_btn': False,
@@ -181,7 +182,6 @@ def event_search_goods(request, **kwargs):
 
 
 def event_load_stock(request, **kwargs):
-    print(kwargs['_operation_slug'])
     if kwargs['_operation_slug'] == 'comparison-stock':
         __file_pg_stock = PgStocks().query_goods_stock_by_group_id(_contract=context['contract'])
         __file_wms_stock = WmsStocks(_contract=context['contract']).get_goods_by_guid_group(
