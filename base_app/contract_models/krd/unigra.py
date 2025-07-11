@@ -63,6 +63,7 @@ def __create_prefix_num_order(_data):
 def __load_parse_file(_wb_file):
     _df = pd.read_excel(_wb_file, dtype=object)
     _df[_df.columns[NUM_ORDER]] = _df[_df.columns[NUM_ORDER]].apply(__create_prefix_num_order)
+    # _df[_df.columns[NUM_ART_PRODUCT]] = _df[_df.columns[NUM_ART_PRODUCT]].apply(__create_prefix)
     _df_order = _df[_df['ВидНакладной'] == 'Расход'].copy()
     _df_porder = _df[_df['ВидНакладной'] == 'Приход'].copy()
     return _df_order, _df_porder

@@ -1,0 +1,23 @@
+{% extends 'base_app/base_templates.html' %}
+
+{% block content %}
+    <div id="basic_div_menu">
+        <div class="sub_menu">
+            {% for report in reports %}
+                {% if reports_selected == report.slug %}
+                    <span class="selected"><a href="#{{ report.slug }}">
+                        {{ report.name }}
+                    </a>
+                    </span>
+                {% else %}
+                    <span class="button_line">
+{#                        <a href="{{ get_home_url }}">#}
+                        <a href="{{ report.get_home_url }}">
+                        {{ report.name }}
+                        </a>
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

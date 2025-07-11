@@ -28,7 +28,6 @@ class SaveFileWms:
     def __date_reformat(_df):
         for col in _df.columns:
             if 'СерияНоменклатуры.ДатаПроизводства' == col or 'СерияНоменклатуры.ГоденДо' == col:
-                print(_df[col].to_markdown())
                 _df[col] = pd.to_datetime(_df[col])
                 _df[col] = _df[col].dt.date
         return _df

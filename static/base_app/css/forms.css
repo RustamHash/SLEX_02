@@ -7,7 +7,15 @@
 .operation_form {
     width: 100%;
     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-between;
     /*border: 2px solid black;*/
+}
+
+.form_div div label {
+    display: inline-block;
+    width: 75px;
 }
 
 .inp_search_file {

@@ -11,6 +11,9 @@
                     <span class="button_line"><a href="{{ menu.get_home_url }}">{{ menu.name }}</a></span>
                 {% endif %}
             {% endfor %}
+            {% if request.user.is_authenticated %}
+                <span class="button_line"><a href="{% url 'reports:index' %}">Отчеты</a></span>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

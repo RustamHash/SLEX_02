@@ -1,7 +1,5 @@
 from django import forms
 
-from base_app.models import Contracts
-
 
 # contracts_all = Contracts.objects.all()
 
@@ -19,6 +17,8 @@ class SverkiForm(forms.Form):
     def __init__(self, choice_contracts, *args, **kwargs):
         self.choice_contracts = choice_contracts
         super(SverkiForm, self).__init__(*args, **kwargs)
-        self.fields['contract_field'] = forms.ChoiceField(
+        self.fields["contract_field"].widget.attrs["class"] = "contract_field"
+        self.fields["contract_field"] = forms.ChoiceField(
             choices=append_contract_choices(contracts_all=self.choice_contracts),
-            label='Контракты')
+            label="Контракты",
+        )

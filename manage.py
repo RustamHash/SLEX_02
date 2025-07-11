@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SLEX_02.settings')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SLEX_02.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -18,6 +18,12 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    # python manage.py makemigrations
+    # python manage.py migrate
+    # python manage.py createsuperuser
+    start = True
+    if start:
+        url_server = "172.28.178.81"
+        sys.argv[2] = sys.argv[2].replace("localhost", url_server)
     main()
-    """python manage.py runserver 172.28.178.81:8000"""

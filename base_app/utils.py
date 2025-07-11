@@ -34,6 +34,8 @@ def comparison_stock(__file_pg_stock, __file_wms_stock, _contract):
         'Количество_WMS'].sum().reset_index()
     df = __df_pg_stock_by.merge(__df_wms_stock_by, how='outer')
     df.fillna(0, inplace=True)
+    df['Количество_WMS'] = df['Количество_WMS'].round(decimals=3)
+    df['Количество'] = df['Количество'].round(decimals=3)
     df['Разница'] = df['Количество_WMS'] - df['Количество']
     _file_name = __save_reports_stock_to_excel(_contract=_contract, _df_stocks_save=df, _type_reports='Сверка')
     return _file_name
@@ -85,8 +87,6 @@ def start_client(data: dict, contract):
 
 
 def save_to_xml(data: dict, type_order, contract):
-    # __dict_ftp_param = {'HOST': 'ftp.rnd.gk21.ru', 'USERNAME': 'ynigra', 'PASSWORD': 'EaDGruteS25',
-    #                     'DIRECTORY': 'krs/in'}
     for k1, v1 in data.items():
         const_name = f'{str(type_order)}ExportDC'
         new = ET.Element('AxaptaXMLExport')
@@ -105,7 +105,6 @@ def save_to_xml(data: dict, type_order, contract):
         save_file_name = __create_name_file_save_xml(str(k1), str(type_order), contract)
 
         __save_xml(save_file_name, new)
-        # upload_ftp(filenames=save_file_name, **__dict_ftp_param)
 
 
 def __save_reports_stock_to_excel(_contract, _df_stocks_save, _type_reports):

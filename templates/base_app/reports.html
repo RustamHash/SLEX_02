@@ -5,7 +5,7 @@
         <div class="sub_menu">
             {% for rep in reports %}
                 {% if reports_selected == rep.slug %}
-                    <span class="selected"><a href="{% url 'choice_reports' _filial_slug=filial.slug _reports_slug=rep.slug  %}">
+                    <span class="selected"><a href="{% url 'report:index' %}">
                         {{ rep.name }}
                     </a>
                     </span>
@@ -21,11 +21,13 @@
     </div>
     {% if report %}
         <div class="operation_div" id="operation_div">
-            {% if report.slug == 'sverki' %}
+            {% if report.slug == 'billingi' %}
                 <div class="form_div">
                     {{ form }}
                     <input id="click_ok" type="button" name="your_name" value="test" maxlength="100" required>
                 </div>
             {% endif %}
+        </div>
     {% endif %}
 {% endblock %}
+
