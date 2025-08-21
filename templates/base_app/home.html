@@ -4,6 +4,9 @@
 {% block menu %}
     <div id="basic_div_menu">
         <div class="menu">
+        {% if request.user.username == 'slex24' %}
+            <span class="button_line"><a href="{% url 'tander:index' %}">Тандер</a></span>
+        {% else %}
             {% for menu in menus %}
                 {% if contract_selected == menu.slug %}
                     <span class="selected"><a href="{{ menu.get_home_url }}">{{ menu.name }}</a></span>
@@ -13,7 +16,9 @@
             {% endfor %}
             {% if request.user.is_authenticated %}
                 <span class="button_line"><a href="{% url 'reports:index' %}">Отчеты</a></span>
+{#                <span class="button_line"><a href="{% url 'tander:index' %}">Тандер</a></span>#}
             {% endif %}
+        {% endif %}
         </div>
     </div>
 {% endblock %}

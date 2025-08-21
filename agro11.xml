@@ -1,729 +1,985 @@
 <?xml version="1.0" ?>
 <xml version="1.0" encoding="utf-8">
 	<Message>
-		<BaseID>AGRO</BaseID>
+		<BaseID>AGRO_02</BaseID>
 		<Documents>
 			<Document>
 				<Type>007</Type>
-				<Number>16072025_1</Number>
-				<Date>2025-07-16</Date>
+				<Number>21082025_1</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Москва</Driver>
+				<LoadingNum>10</LoadingNum>
+				<LoadingTime>_</LoadingTime>
+				<TruckID>Заморозка</TruckID>
+				<Comment>AGRO_Склад Агрокомплекс Заморозка_Москва_21082025</Comment>
+				<Orders>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Москва_21082025</Rout>
+						<Number>11156553</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Москва_21082025</Rout>
+						<Number>11156554</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Москва_21082025</Rout>
+						<Number>11156555</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Москва_21082025</Rout>
+						<Number>11156556</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Москва_21082025</Rout>
+						<Number>11156557</Number>
+						<Weight>1</Weight>
+					</row>
+				</Orders>
+			</Document>
+			<Document>
+				<Type>007</Type>
+				<Number>21082025_2</Number>
+				<Date>2025-08-21</Date>
 				<Driver>Краснодар</Driver>
 				<LoadingNum>10</LoadingNum>
 				<LoadingTime>_</LoadingTime>
 				<TruckID>Заморозка</TruckID>
-				<Comment>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Comment>
+				<Comment>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Comment>
 				<Orders>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151322</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156526</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151323</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156527</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151324</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156528</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151325</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156529</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151326</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156530</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151327</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156531</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151328</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156532</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151329</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156533</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151330</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156534</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151331</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156535</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151332</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156536</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151333</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156537</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151334</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156538</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151335</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156539</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151336</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156540</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151337</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156541</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151338</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156542</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151339</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156543</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151340</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156544</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151341</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156545</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151342</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156546</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151343</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156547</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151344</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156549</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151345</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151346</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151347</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151348</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151349</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151362</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151363</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151364</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151365</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151370</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151371</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151372</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_16072025</Rout>
-						<Number>11151373</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Краснодар_21082025</Rout>
+						<Number>11156550</Number>
 						<Weight>1</Weight>
 					</row>
 				</Orders>
 			</Document>
 			<Document>
 				<Type>007</Type>
-				<Number>16072025_2</Number>
-				<Date>2025-07-16</Date>
-				<Driver>Краснодар</Driver>
+				<Number>21082025_3</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Пятигорск</Driver>
 				<LoadingNum>10</LoadingNum>
 				<LoadingTime>_</LoadingTime>
 				<TruckID>Сухой</TruckID>
-				<Comment>AGRO_Склад Агрокомплекс_Краснодар_16072025</Comment>
+				<Comment>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Comment>
 				<Orders>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151278</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156628</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151279</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156629</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151280</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156630</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151281</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156631</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151282</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156632</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151283</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156633</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151284</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156634</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151285</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156635</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151286</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156636</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151287</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156637</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151288</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156638</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151289</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156639</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151290</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156640</Number>
 						<Weight>1</Weight>
 					</row>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151291</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151292</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151293</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151294</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151295</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151296</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151297</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151298</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151299</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151300</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151301</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151302</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151303</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151304</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151305</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151306</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151307</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151308</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151309</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151310</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151311</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151312</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151313</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151314</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151315</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151316</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151317</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151318</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151319</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151320</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151321</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Краснодар_16072025</Rout>
-						<Number>11151350</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Пятигорск_21082025</Rout>
+						<Number>11156641</Number>
 						<Weight>1</Weight>
 					</row>
 				</Orders>
 			</Document>
 			<Document>
 				<Type>007</Type>
-				<Number>16072025_3</Number>
-				<Date>2025-07-16</Date>
+				<Number>21082025_4</Number>
+				<Date>2025-08-21</Date>
 				<Driver>Выселковский РЦ</Driver>
 				<LoadingNum>10</LoadingNum>
 				<LoadingTime>_</LoadingTime>
 				<TruckID>Заморозка</TruckID>
-				<Comment>AGRO_Склад Агрокомплекс Заморозка_Выселковский РЦ_16072025</Comment>
+				<Comment>AGRO_Склад Агрокомплекс Заморозка_Выселковский РЦ_21082025</Comment>
 				<Orders>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Выселковский РЦ_16072025</Rout>
-						<Number>11151361</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Выселковский РЦ_16072025</Rout>
-						<Number>11151367</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Выселковский РЦ_16072025</Rout>
-						<Number>11151368</Number>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Выселковский РЦ_21082025</Rout>
+						<Number>11156548</Number>
 						<Weight>1</Weight>
 					</row>
 				</Orders>
 			</Document>
 			<Document>
 				<Type>007</Type>
-				<Number>16072025_4</Number>
-				<Date>2025-07-16</Date>
-				<Driver>Пятигорск</Driver>
-				<LoadingNum>10</LoadingNum>
-				<LoadingTime>_</LoadingTime>
-				<TruckID>Заморозка</TruckID>
-				<Comment>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Comment>
-				<Orders>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151351</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151352</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151353</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151354</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151355</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151356</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151357</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151358</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151359</Number>
-						<Weight>1</Weight>
-					</row>
-					<row>
-						<BaseID>376</BaseID>
-						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс Заморозка_Пятигорск_16072025</Rout>
-						<Number>11151360</Number>
-						<Weight>1</Weight>
-					</row>
-				</Orders>
-			</Document>
-			<Document>
-				<Type>007</Type>
-				<Number>16072025_5</Number>
-				<Date>2025-07-16</Date>
-				<Driver>Новороссийск</Driver>
+				<Number>21082025_5</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Краснодар</Driver>
 				<LoadingNum>10</LoadingNum>
 				<LoadingTime>_</LoadingTime>
 				<TruckID>Сухой</TruckID>
-				<Comment>AGRO_Склад Агрокомплекс_Новороссийск_16072025</Comment>
+				<Comment>AGRO_Склад Агрокомплекс_Краснодар_21082025</Comment>
 				<Orders>
 					<row>
 						<BaseID>376</BaseID>
 						<Type>001</Type>
-						<Rout>AGRO_Склад Агрокомплекс_Новороссийск_16072025</Rout>
-						<Number>11151366</Number>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156577</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156578</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156579</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156580</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156581</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156582</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156583</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156584</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156585</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156586</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156587</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156588</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156589</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156590</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156591</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156592</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156593</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156594</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156595</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156596</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156597</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156598</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156599</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156600</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156601</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156602</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156603</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Краснодар_21082025</Rout>
+						<Number>11156604</Number>
+						<Weight>1</Weight>
+					</row>
+				</Orders>
+			</Document>
+			<Document>
+				<Type>007</Type>
+				<Number>21082025_6</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Новороссийск</Driver>
+				<LoadingNum>10</LoadingNum>
+				<LoadingTime>_</LoadingTime>
+				<TruckID>Заморозка</TruckID>
+				<Comment>AGRO_Склад Агрокомплекс Заморозка_Новороссийск_21082025</Comment>
+				<Orders>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс Заморозка_Новороссийск_21082025</Rout>
+						<Number>11156643</Number>
+						<Weight>1</Weight>
+					</row>
+				</Orders>
+			</Document>
+			<Document>
+				<Type>007</Type>
+				<Number>21082025_7</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Москва</Driver>
+				<LoadingNum>10</LoadingNum>
+				<LoadingTime>_</LoadingTime>
+				<TruckID>Сухой</TruckID>
+				<Comment>AGRO_Склад Агрокомплекс_Москва_21082025</Comment>
+				<Orders>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Москва_21082025</Rout>
+						<Number>11156552</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Москва_21082025</Rout>
+						<Number>11156558</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Москва_21082025</Rout>
+						<Number>11156559</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Москва_21082025</Rout>
+						<Number>11156560</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Москва_21082025</Rout>
+						<Number>11156561</Number>
+						<Weight>1</Weight>
+					</row>
+				</Orders>
+			</Document>
+			<Document>
+				<Type>007</Type>
+				<Number>21082025_8</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Дон</Driver>
+				<LoadingNum>10</LoadingNum>
+				<LoadingTime>_</LoadingTime>
+				<TruckID>Сухой</TruckID>
+				<Comment>AGRO_Склад Агрокомплекс_Дон_21082025</Comment>
+				<Orders>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156605</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156606</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156607</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156608</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156609</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156610</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156611</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156612</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156613</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156614</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156615</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156616</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156617</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156618</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156619</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156620</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156621</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156622</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156623</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156624</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156625</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156626</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156627</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Дон_21082025</Rout>
+						<Number>11156644</Number>
+						<Weight>1</Weight>
+					</row>
+				</Orders>
+			</Document>
+			<Document>
+				<Type>007</Type>
+				<Number>21082025_9</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Выселковский РЦ</Driver>
+				<LoadingNum>10</LoadingNum>
+				<LoadingTime>_</LoadingTime>
+				<TruckID>Сухой</TruckID>
+				<Comment>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Comment>
+				<Orders>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156521</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156522</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156523</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156524</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156525</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156562</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156563</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156564</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156565</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156566</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156567</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156568</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156569</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156570</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156571</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156572</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156573</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156574</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156575</Number>
+						<Weight>1</Weight>
+					</row>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Выселковский РЦ_21082025</Rout>
+						<Number>11156576</Number>
+						<Weight>1</Weight>
+					</row>
+				</Orders>
+			</Document>
+			<Document>
+				<Type>007</Type>
+				<Number>21082025_10</Number>
+				<Date>2025-08-21</Date>
+				<Driver>Армавир</Driver>
+				<LoadingNum>10</LoadingNum>
+				<LoadingTime>_</LoadingTime>
+				<TruckID>Сухой</TruckID>
+				<Comment>AGRO_Склад Агрокомплекс_Армавир_21082025</Comment>
+				<Orders>
+					<row>
+						<BaseID>376</BaseID>
+						<Type>001</Type>
+						<Rout>AGRO_Склад Агрокомплекс_Армавир_21082025</Rout>
+						<Number>11156642</Number>
 						<Weight>1</Weight>
 					</row>
 				</Orders>

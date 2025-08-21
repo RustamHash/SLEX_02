@@ -44,11 +44,6 @@ def billing_tls(**kwargs):
         limit=_limit,
     )
     df = pd.DataFrame(invoices)
-    print(df.to_markdown())
-    # df["date_doc"] = pd.to_datetime(df["date_doc"]).dt.date
-    # df["invoice_type_id"] = df["invoice_type_id"].replace(
-    #     {103: "Приход", 203: "Расход"}
-    # )
     file_name = save_reports_stock_to_excel(
         _contract=contract, _df_stocks_save=df, _type_reports="Биллинг"
     )

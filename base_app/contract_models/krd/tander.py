@@ -37,13 +37,12 @@ NUM_Comment = 0
 
 
 def start(file_name, contract):
-    # __df_product = pd.read_excel(file_name, dtype=object)
-    # __create_product(__df_product, contract)
-    # return dic_log_return, True
     try:
         for i in dic_log_return:
             dic_log_return[i] = 0
         _df_order, _df_porder, _ka = __load_parse_file(file_name)
+        _df_porder.to_excel("porder.xlsx", index=False)
+        _df_order.to_excel("order.xlsx", index=False)
         if _ka:
             if len(_df_porder) > 0:
                 __create_porder_ka(_df_porder, contract)
@@ -69,8 +68,6 @@ def __load_parse_file(_wb_file):
         _df["Код РЦ Получателя"] = _df["Код РЦ Получателя"].astype(int)
         _df_order = _df[_df["Код РЦ Отправителя"] == dic_const["id_sklad"]].copy()
         _df_porder = _df[_df["Код РЦ Получателя"] == dic_const["id_sklad"]].copy()
-        print(_df_porder.to_markdown())
-        print(_df.to_markdown())
     else:
         _df_porder = _df.copy()
         _ka = True
@@ -80,7 +77,6 @@ def __load_parse_file(_wb_file):
 def __add_pallet(__dict):
     i = 0
     for key in __dict.keys():
-        print(i + 1)
         _ = __dict[key][0].copy()
         _["Itemid"] = 1038000001
         _["Qty"] = 33

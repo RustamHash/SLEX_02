@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "skud.apps.SkudConfig",
     "report.apps.ReportConfig",
     "api.apps.ApiConfig",
+    "tander.apps.TanderConfig",
 ]
 
 MIDDLEWARE = [

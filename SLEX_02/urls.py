@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("base_app.urls")),
     path("reports/", include("report.urls", namespace="reports")),
+    path("tander/", include("tander.urls", namespace="tander")),
     path("api/v1/", include("api.urls", namespace="api_v1")),
     path("__debug__/", include(debug_toolbar.urls)),
 ]
