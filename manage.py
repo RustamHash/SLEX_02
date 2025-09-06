@@ -19,11 +19,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # python manage.py makemigrations
-    # python manage.py migrate
-    # python manage.py createsuperuser
-    start = True
-    if start:
-        url_server = "172.28.178.81"
-        sys.argv[2] = sys.argv[2].replace("localhost", url_server)
     main()

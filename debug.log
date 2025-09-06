@@ -518,7 +518,7 @@ Traceback (most recent call last):
     context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\base_app\utils.py", line 30, in comparison_stock
-    __df_wms_stock_by = __df_wms_stock.groupby(['Артикул', 'КодТовара', 'Наименование'])[
+    __df_wms_stock_by = __df_wms_stock.groupby(['пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'])[
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\frame.py", line 9183, in groupby
     return DataFrameGroupBy(
@@ -528,7 +528,7 @@ Traceback (most recent call last):
                                ^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 1043, in get_grouper
     raise KeyError(gpr)
-KeyError: 'Артикул'
+KeyError: 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 2025-01-17 11:40:21,728 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): 172.172.185.67:80
 2025-01-17 11:40:22,313 urllib3.connectionpool DEBUG    http://172.172.185.67:80 "GET /krd_itc_wms/odata/standard.odata//AccumulationRegister_%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8%D0%92%D0%9F%D0%BE%D0%BB%D0%BB%D0%B5%D1%82%D0%B0%D1%85/Balance?$format=json&$expand=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent,%20%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4,%20%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B&$select=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Code,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Description,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Description,%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BEBalance,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%94%D0%B0%D1%82%D0%B0%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%93%D0%BE%D0%B4%D0%B5%D0%BD%D0%94%D0%BE,%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4/Description&$orderby=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB&$filter=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Code%20eq%20'356959' HTTP/1.1" 200 27775
 2025-01-17 11:40:45,365 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): 172.172.185.67:80
@@ -793,7 +793,7 @@ Traceback (most recent call last):
     context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\base_app\utils.py", line 30, in comparison_stock
-    __df_wms_stock_by = __df_wms_stock.groupby(['Артикул', 'КодТовара', 'Наименование'])[
+    __df_wms_stock_by = __df_wms_stock.groupby(['пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'])[
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\frame.py", line 9183, in groupby
     return DataFrameGroupBy(
@@ -803,7 +803,7 @@ Traceback (most recent call last):
                                ^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 1043, in get_grouper
     raise KeyError(gpr)
-KeyError: 'Артикул'
+KeyError: 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 2025-02-05 17:09:08,311 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): 172.172.185.67:80
 2025-02-05 17:09:11,780 urllib3.connectionpool DEBUG    http://172.172.185.67:80 "GET /krd_itc_wms/odata/standard.odata//AccumulationRegister_%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8%D0%92%D0%9F%D0%BE%D0%BB%D0%BB%D0%B5%D1%82%D0%B0%D1%85/Balance?$format=json&$expand=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent,%20%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4,%20%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B&$select=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Code,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Description,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Description,%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BEBalance,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%94%D0%B0%D1%82%D0%B0%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%93%D0%BE%D0%B4%D0%B5%D0%BD%D0%94%D0%BE,%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4/Description&$orderby=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB&$filter=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Code%20eq%20'383531' HTTP/1.1" 200 192
 2025-02-06 08:40:10,743 django.request WARNING  Not Found: /favicon.ico
@@ -821,7 +821,7 @@ Traceback (most recent call last):
     context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\base_app\utils.py", line 30, in comparison_stock
-    __df_wms_stock_by = __df_wms_stock.groupby(['Артикул', 'КодТовара', 'Наименование'])[
+    __df_wms_stock_by = __df_wms_stock.groupby(['пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'])[
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\frame.py", line 9183, in groupby
     return DataFrameGroupBy(
@@ -831,7 +831,7 @@ Traceback (most recent call last):
                                ^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 1043, in get_grouper
     raise KeyError(gpr)
-KeyError: 'Артикул'
+KeyError: 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 2025-02-06 16:14:21,962 django.request WARNING  Not Found: /favicon.ico
 2025-02-06 16:14:30,047 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): 172.172.185.67:80
 2025-02-06 16:14:39,471 urllib3.connectionpool DEBUG    http://172.172.185.67:80 "POST /krd_itc_wms/ru_RU/hs/PutData HTTP/1.1" 200 316
@@ -3036,7 +3036,7 @@ Traceback (most recent call last):
     context['result'] = comparison_stock(_contract=context['contract'], __file_pg_stock=__file_pg_stock,
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\base_app\utils.py", line 33, in comparison_stock
-    __df_wms_stock_by = __df_wms_stock.groupby(['Артикул', 'КодТовара', 'Наименование'])[
+    __df_wms_stock_by = __df_wms_stock.groupby(['пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'])[
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\frame.py", line 9183, in groupby
     return DataFrameGroupBy(
@@ -3046,7 +3046,7 @@ Traceback (most recent call last):
                                ^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 1043, in get_grouper
     raise KeyError(gpr)
-KeyError: 'Артикул'
+KeyError: 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 2025-04-08 15:43:28,712 django.utils.autoreload INFO     C:\Users\rhashhanok\PycharmProjects\SLEX_02\base_app\contract_models\standart.py changed, reloading.
 2025-04-08 15:43:30,419 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-04-08 16:35:13,834 django.request WARNING  Not Found: /favicon.ico
@@ -4083,12 +4083,12 @@ KeyError: 'filial_field'
 2025-04-23 14:25:24,924 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-04-23 14:26:11,970 django.utils.autoreload INFO     C:\Users\rhashhanok\PycharmProjects\SLEX_02\report\urls.py changed, reloading.
 2025-04-23 14:26:13,598 django.utils.autoreload INFO     Watching for file changes with StatReloader
-2025-04-23 14:27:30,260 django.request WARNING  Not Found: /reports/Биллинги
+2025-04-23 14:27:30,260 django.request WARNING  Not Found: /reports/пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 2025-04-23 14:28:30,483 django.utils.autoreload INFO     C:\Users\rhashhanok\PycharmProjects\SLEX_02\report\models.py changed, reloading.
 2025-04-23 14:28:32,568 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-04-23 14:28:36,030 django.utils.autoreload INFO     C:\Users\rhashhanok\PycharmProjects\SLEX_02\report\models.py changed, reloading.
 2025-04-23 14:28:37,946 django.utils.autoreload INFO     Watching for file changes with StatReloader
-2025-04-23 14:28:38,326 django.request WARNING  Not Found: /reports/Биллинги
+2025-04-23 14:28:38,326 django.request WARNING  Not Found: /reports/пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 2025-04-23 14:29:03,747 django.request ERROR    Internal Server Error: /reports/billing
 Traceback (most recent call last):
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
@@ -5503,7 +5503,7 @@ Traceback (most recent call last):
     context["result"] = comparison_stock(
                         ^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\base_app\utils.py", line 33, in comparison_stock
-    __df_wms_stock_by = __df_wms_stock.groupby(['Артикул', 'КодТовара', 'Наименование'])[
+    __df_wms_stock_by = __df_wms_stock.groupby(['пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'])[
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\frame.py", line 9183, in groupby
     return DataFrameGroupBy(
@@ -5513,7 +5513,7 @@ Traceback (most recent call last):
                                ^^^^^^^^^^^^
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 1043, in get_grouper
     raise KeyError(gpr)
-KeyError: 'Артикул'
+KeyError: 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 2025-04-25 10:04:11,712 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): 172.172.185.67:80
 2025-04-25 10:04:15,568 urllib3.connectionpool DEBUG    http://172.172.185.67:80 "GET /krd_itc_wms/odata/standard.odata//AccumulationRegister_%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8%D0%92%D0%9F%D0%BE%D0%BB%D0%BB%D0%B5%D1%82%D0%B0%D1%85/Balance?$format=json&$expand=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent,%20%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4,%20%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B&$select=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Code,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Description,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Description,%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BEBalance,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%94%D0%B0%D1%82%D0%B0%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%93%D0%BE%D0%B4%D0%B5%D0%BD%D0%94%D0%BE,%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4/Description&$orderby=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB&$filter=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Code%20eq%20'391291' HTTP/1.1" 200 1269512
 2025-04-25 12:16:41,545 django.request WARNING  Not Found: /favicon.ico
@@ -8002,7 +8002,7 @@ Traceback (most recent call last):
     raise err
   File "C:\Users\rhashhanok\PycharmProjects\SLEX_02\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
     sock.connect(sa)
-TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+TimeoutError: [WinError 10060] пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 The above exception was the direct cause of the following exception:
 
@@ -9124,6 +9124,425 @@ KeyError: 'contract'
 2025-07-15 17:53:49,806 urllib3.connectionpool DEBUG    http://172.172.185.67:80 "GET /krd_itc_wms/odata/standard.odata//AccumulationRegister_%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8%D0%92%D0%9F%D0%BE%D0%BB%D0%BB%D0%B5%D1%82%D0%B0%D1%85/Balance?$format=json&$expand=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent,%20%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4,%20%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B&$select=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Code,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Description,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Description,%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BEBalance,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%94%D0%B0%D1%82%D0%B0%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%93%D0%BE%D0%B4%D0%B5%D0%BD%D0%94%D0%BE,%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4/Description&$orderby=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB&$filter=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Code%20eq%20'381937' HTTP/1.1" 200 25697
 2025-07-15 17:54:00,472 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): 172.172.185.67:80
 2025-07-15 17:54:00,820 urllib3.connectionpool DEBUG    http://172.172.185.67:80 "GET /krd_itc_wms/odata/standard.odata//AccumulationRegister_%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8%D0%92%D0%9F%D0%BE%D0%BB%D0%BB%D0%B5%D1%82%D0%B0%D1%85/Balance?$format=json&$expand=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent,%20%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4,%20%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B&$select=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Code,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Description,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB,%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Description,%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BEBalance,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%94%D0%B0%D1%82%D0%B0%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0,%D0%A1%D0%B5%D1%80%D0%B8%D1%8F%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D1%8B/%D0%93%D0%BE%D0%B4%D0%B5%D0%BD%D0%94%D0%BE,%D0%AF%D1%87%D0%B5%D0%B9%D0%BA%D0%B0%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BA%D0%BB%D0%B0%D0%B4/Description&$orderby=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/%D0%90%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB&$filter=%D0%9D%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BB%D0%B0%D1%82%D1%83%D1%80%D0%B0/Parent/Code%20eq%20'381937' HTTP/1.1" 200 25697
+2025-08-21 14:12:42,579 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:56,873 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:15,300 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:44,837 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:14:19,461 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:12,079 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pytz\tzinfo.py changed, reloading.
+2025-08-21 14:16:13,245 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:15,736 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\asgiref\__init__.py changed, reloading.
+2025-08-21 14:16:16,984 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:44,509 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:30,153 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:33,952 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 14:17:34,004 django.request WARNING  Bad Request: /
+2025-08-21 14:17:55,413 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 14:17:56,743 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:24:05,497 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:42,579 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:56,873 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:15,300 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:44,837 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:14:19,461 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:12,079 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pytz\tzinfo.py changed, reloading.
+2025-08-21 14:16:13,245 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:15,736 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\asgiref\__init__.py changed, reloading.
+2025-08-21 14:16:16,984 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:44,509 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:30,153 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:33,952 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 14:17:34,004 django.request WARNING  Bad Request: /
+2025-08-21 14:17:55,413 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 14:17:56,743 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:24:05,497 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:24:45,000 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\manage.py changed, reloading.
+2025-08-21 14:24:46,451 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:42,579 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:56,873 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:15,300 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:44,837 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:14:19,461 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:12,079 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pytz\tzinfo.py changed, reloading.
+2025-08-21 14:16:13,245 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:15,736 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\asgiref\__init__.py changed, reloading.
+2025-08-21 14:16:16,984 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:44,509 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:30,153 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:33,952 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 14:17:34,004 django.request WARNING  Bad Request: /
+2025-08-21 14:17:55,413 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 14:17:56,743 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:24:05,497 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:42,579 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:12:56,873 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:15,300 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:13:44,837 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:14:19,461 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:12,079 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\pytz\tzinfo.py changed, reloading.
+2025-08-21 14:16:13,245 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:15,736 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\asgiref\__init__.py changed, reloading.
+2025-08-21 14:16:16,984 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:16:44,509 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:30,153 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:17:33,952 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 14:17:34,004 django.request WARNING  Bad Request: /
+2025-08-21 14:17:55,413 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 14:17:56,743 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:24:05,497 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:24:45,000 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\manage.py changed, reloading.
+2025-08-21 14:24:46,451 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:25:24,861 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 14:25:26,470 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:25:56,974 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 14:25:58,259 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:26:40,816 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:26:54,801 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\manage.py changed, reloading.
+2025-08-21 14:26:56,193 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:26:59,272 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:27:09,079 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:27:27,479 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 14:27:27,524 django.request WARNING  Bad Request: /
+2025-08-21 14:28:48,066 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 14:28:51,868 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 14:28:51,903 django.request WARNING  Bad Request: /
+2025-08-21 17:46:24,252 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:46:44,628 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\apps.py changed, reloading.
+2025-08-21 17:46:45,610 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:46:55,451 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\apps.py changed, reloading.
+2025-08-21 17:46:56,634 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:47:12,362 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\apps.py changed, reloading.
+2025-08-21 17:47:13,303 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:47:23,121 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\skud\apps.py changed, reloading.
+2025-08-21 17:47:24,076 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:47:39,220 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 17:47:40,138 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:47:48,988 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 17:47:50,028 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:48:15,644 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\apps.py changed, reloading.
+2025-08-21 17:48:16,581 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:48:23,280 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\skud\apps.py changed, reloading.
+2025-08-21 17:48:24,294 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:48:34,387 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\apps.py changed, reloading.
+2025-08-21 17:48:35,640 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:50:12,095 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-21 17:50:13,245 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:51:40,570 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\__init__.py changed, reloading.
+2025-08-21 17:51:41,961 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:51:45,901 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 17:51:45,941 django.request WARNING  Bad Request: /
+2025-08-21 17:51:46,168 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 17:51:46,192 django.request WARNING  Bad Request: /favicon.ico
+2025-08-21 17:52:04,561 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 17:52:05,708 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:52:06,536 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 17:52:06,587 django.request WARNING  Bad Request: /
+2025-08-21 17:52:06,766 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 17:52:06,786 django.request WARNING  Bad Request: /favicon.ico
+2025-08-21 17:52:18,964 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:52:22,358 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 17:52:23,589 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:52:27,139 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 17:52:27,195 django.request WARNING  Bad Request: /
+2025-08-21 17:52:27,402 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-08-21 17:52:27,434 django.request WARNING  Bad Request: /favicon.ico
+2025-08-21 17:52:45,062 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-08-21 17:52:46,228 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-21 17:52:50,243 django.request WARNING  Not Found: /favicon.ico
+2025-08-21 17:53:08,816 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\__init__.py changed, reloading.
+2025-08-21 17:53:10,258 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:00:42,111 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\__init__.py changed, reloading.
+2025-08-22 01:00:43,616 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:00:59,282 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\__init__.py changed, reloading.
+2025-08-22 01:01:00,419 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:02:05,480 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-22 01:02:06,608 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:02:09,949 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:02:12,132 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:12,557 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:12,559 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:12,936 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/31ed908b9ed40d51bff50ac1e13ff2a7e6f0c2089553f3a521548277e70c479c/68a7cfa4/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:12,942 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s121klg.storage.yandex.net:443
+2025-08-22 01:02:13,342 urllib3.connectionpool DEBUG    https://s121klg.storage.yandex.net:443 "GET /rdisk/31ed908b9ed40d51bff50ac1e13ff2a7e6f0c2089553f3a521548277e70c479c/68a7cfa4/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea98183100&s=d773f821cd07c028bc671f3a138079d08ac6d577559f553951929e667ef53756&pb=U2FsdGVkX19lqA5ziUxMqik5i4AZ0fvUfpBl1Eezvjg1QxAf7ZbrJVrE6B_gitGy8koe8YCr1x45jgvOgAVx_lgvp53PnDStH3uhGkkKnfE HTTP/1.1" 200 22
+2025-08-22 01:02:23,420 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:23,911 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:23,916 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:24,307 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/94884b84fd2ce93c5e5849eaff7aa737d673aa93c15abaf76d9f7772d059fe30/68a7cfb0/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:24,313 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s121klg.storage.yandex.net:443
+2025-08-22 01:02:24,672 urllib3.connectionpool DEBUG    https://s121klg.storage.yandex.net:443 "GET /rdisk/94884b84fd2ce93c5e5849eaff7aa737d673aa93c15abaf76d9f7772d059fe30/68a7cfb0/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea98cf4c00&s=dad679ef1d5035a6a726f19d4a5b37bc0781c50f62a18ad714085b53ff78ab74&pb=U2FsdGVkX1_JJDarKtcgADaQRqCQto_NcZiPcEQuwFVi_veVqAqY7iPg97OBQi_lrZx1eNwNYgZb4jsPYWKsuiA53zEc7LpGKQIjfUZBvvw HTTP/1.1" 200 22
+2025-08-22 01:02:25,852 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:26,337 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:26,341 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:26,721 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/ab6a6192adf82d7287ee6824f089f9baabb8afe2d53e8a65c4774f657ef958ba/68a7cfb2/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:26,727 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:02:27,043 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:27,074 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/ab6a6192adf82d7287ee6824f089f9baabb8afe2d53e8a65c4774f657ef958ba/68a7cfb2/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea98edd080&s=616598816613ee6dde5b4050011df465b92929179bbe8b118c392f9fd61df877&pb=U2FsdGVkX1_JZgiZQ8KuTOOyfvpC5oCvLWTX1ZT7IVkswonM3MJ2cSXHwHbkCaqZ9KLpMDGxwxhe_60EAngxWtCggThi7tUaWLu5zfOMFv8 HTTP/1.1" 200 22
+2025-08-22 01:02:27,525 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:27,528 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:27,819 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:27,924 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/e84f9148e7aa2627fd964c79ecb0f145885335745757600c52a158aea92bd138/68a7cfb3/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:27,930 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:02:28,316 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:28,317 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/e84f9148e7aa2627fd964c79ecb0f145885335745757600c52a158aea92bd138/68a7cfb3/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea98fd12c0&s=ed9b175e8f08d0010e4e0e2f97988b3f5be6df830bd5478ef250ac1a7b09d953&pb=U2FsdGVkX18veUQfBU-DOwfGY2j1Yrl2v_7hyjer_aXPtMmrYVOBKnMURd8jf27soMaNlqah-7kmHV0R-eS2-MEZ9_kbYj-_hS04AK-pIec HTTP/1.1" 200 22
+2025-08-22 01:02:28,336 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:28,693 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/ea2408152aa9475568ec872f82dd7998a71654a8f3830911e4094cf0f82b8bdf/68a7cfb4/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:28,699 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s121klg.storage.yandex.net:443
+2025-08-22 01:02:29,043 urllib3.connectionpool DEBUG    https://s121klg.storage.yandex.net:443 "GET /rdisk/ea2408152aa9475568ec872f82dd7998a71654a8f3830911e4094cf0f82b8bdf/68a7cfb4/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea990c5500&s=be2662bfb73b12bf5cfccd5b62466e97daca1e265128568ae819edae725d311d&pb=U2FsdGVkX18MgWmQJBs6T8JJ3DzVVPZhFVtoM7swLTI8qt3A51T3LH8Oe_8hQySL9XHKsE9IxOPsYMZvYW3DAzRgnWCqpjfZg8rSNOQh6RM HTTP/1.1" 200 22
+2025-08-22 01:02:30,770 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:31,271 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:31,275 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:32,201 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/73c41f427f6a921125a31e6586346702161c385446f0724d70d46951601091b3/68a7cfb7/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:32,206 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:02:32,543 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/73c41f427f6a921125a31e6586346702161c385446f0724d70d46951601091b3/68a7cfb7/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea993a1bc0&s=f0eb181b8d801d02f430df0ccd0d360d9437c431058fdb4ac4cda758930c0c54&pb=U2FsdGVkX1-GonQootavIk6JD2OK_9eZLt5dl0bA6fs0iovvf-tC0Y6cXn1hMnLR-GFBSDo0HRNfgG3I_G5DcANxiFtGA3kW4jYc-eM3FfY HTTP/1.1" 200 22
+2025-08-22 01:02:34,164 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:02:34,657 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:02:34,659 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:02:35,038 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/f1c035cb9513635bce0c7aad8b4c3edef0df124603957c270a4b0fb57456f09d/68a7cfba/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:02:35,044 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:02:35,378 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/f1c035cb9513635bce0c7aad8b4c3edef0df124603957c270a4b0fb57456f09d/68a7cfba/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63cea9967e280&s=c1185b23eb38a31704b5209216f967da5a5fe9666d0c7f91ab830cd43d4c8a3f&pb=U2FsdGVkX1-QYLxoW3ymgcxKi_pOdckdmXo-tNIEkvGCH9hN8IlbgknRpGGXbjTvHZE0lrm8gkua5c5zrEJQcw4mWTu-uUcy5_AplFGVots HTTP/1.1" 200 22
+2025-08-22 01:04:10,985 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-22 01:04:12,227 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:04:34,900 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\__init__.py changed, reloading.
+2025-08-22 01:04:35,956 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:04:36,416 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:04:36,421 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:04:36,788 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/84cda2ed47ab8bd768c519b635a56af5818b2b30030452059fbac1869e2da7d3/68a7d034/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:04:36,795 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:04:37,154 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/84cda2ed47ab8bd768c519b635a56af5818b2b30030452059fbac1869e2da7d3/68a7d034/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63ceaa0ad7500&s=271af852e16ea93fb06a3e8067e34b7cdd67eb75998d548ff398df5c3f75d15b&pb=U2FsdGVkX18KI2D_-LVeKjA6NKjFTGNyxXeNzrBC_bDeiK6MPbk6-x77D6fhZVX6CB9tNOXUeKv2nJs2Jrm2yPwX2xlvUp1Cvg4wDjoWBPA HTTP/1.1" 200 22
+2025-08-22 01:04:37,281 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:04:46,329 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-22 01:04:47,397 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:04:47,864 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:04:47,869 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:04:48,226 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/bacf1e922c87ee5a6cbb1be70605c4eacabf7dd7d8d38f628323220a223163ec/68a7d040/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:04:48,232 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:04:48,567 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/bacf1e922c87ee5a6cbb1be70605c4eacabf7dd7d8d38f628323220a223163ec/68a7d040/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63ceaa1649000&s=457e23ba10e7cd16d59221658a50aefd4c4b4dee3ec6311e4c18db3b482975a6&pb=U2FsdGVkX18RrUKSspU9Z_jtgReQhwLcLn3pU0WyulGiP9L9gqCjUu91C6PMxE3NehGLRHMXUdI305x1ocmVLN0xdgqnpCdNaRuZ-OZdJ-k HTTP/1.1" 200 22
+2025-08-22 01:04:48,663 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:05:48,863 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\__init__.py changed, reloading.
+2025-08-22 01:05:50,035 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:05:50,605 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:05:50,609 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:05:50,968 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/f56463512f506e8a05cbfe86749761b9eff70c645aa18ff960f8ded3b4563771/68a7d07e/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:05:50,975 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:05:51,294 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/f56463512f506e8a05cbfe86749761b9eff70c645aa18ff960f8ded3b4563771/68a7d07e/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63ceaa5169b80&s=6d9f1448ba09cc3911da6840832dcc39beec520c9abb6976ae180bce5b53a3b6&pb=U2FsdGVkX1_EC5fIowHWI5hHrpcX-DNSbX0Tu-onb9_RpoiPrsVsoKBIJUvFs4SnzH5aQIefrk-V_3jOQij4b2mkTvnwtpBvuYFqliaK53Y HTTP/1.1" 200 22
+2025-08-22 01:05:51,413 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:06:09,395 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-22 01:06:10,439 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:06:10,847 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:06:10,852 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:06:11,191 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/b52f095c41d475a7981a9c1a11053a4dd14e45ea414beb318833fc160c5d3457/68a7d093/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:06:11,195 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:06:11,502 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/b52f095c41d475a7981a9c1a11053a4dd14e45ea414beb318833fc160c5d3457/68a7d093/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63ceaa6570ac0&s=e1ba51f773084d76a5bb8656f7e415bb2c622c59916044e01823ae73a42dcd9a&pb=U2FsdGVkX18jHGpz_0if5DD5HDp8e9pMuLEy7Vv_CDGlValp77Nqw8X90O7VZRvK6sbzLKFx113naqxWScrpzYRzACQ-HFQV0vOXOAkx43A HTTP/1.1" 200 22
+2025-08-22 01:06:11,636 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:06:36,149 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-22 01:06:37,279 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:06:37,773 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:06:37,777 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:06:38,147 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/b1a408618b135b2befa96e2221ef54572e910290525886b5fb60a40eef647d65/68a7d0ad/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:06:38,154 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:06:38,484 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/b1a408618b135b2befa96e2221ef54572e910290525886b5fb60a40eef647d65/68a7d0ad/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63ceaa7e3c540&s=e2cd50fe40ea9d95951feadd496061ca7ef755735cd76347ac5a32dc50b490c2&pb=U2FsdGVkX1-fUZDDisVHF9EbmIlM0aOgTO5PAeY0R-AcJqrReS9sGgcinhUwenZQhxuempOIB-RSl_-cv4WleIDU0pl0IIEYN5ZFYEpATuc HTTP/1.1" 200 22
+2025-08-22 01:06:38,625 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:06:40,210 django.request ERROR    Internal Server Error: /krd/contracts/
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py", line 94, in show_contracts
+    as_active=True, filial__slug=context["filial"].slug
+                                 ~~~~~~~^^^^^^^^^^
+KeyError: 'filial'
+2025-08-22 01:07:17,947 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-08-22 01:07:19,098 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:07:19,627 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:07:19,632 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:07:19,998 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/229069d7e2189e61405e34edd3f589657b2df0033a480f0409e38a03d712c362/68a7d0d7/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:07:20,004 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s948sas.storage.yandex.net:443
+2025-08-22 01:07:20,384 urllib3.connectionpool DEBUG    https://s948sas.storage.yandex.net:443 "GET /rdisk/229069d7e2189e61405e34edd3f589657b2df0033a480f0409e38a03d712c362/68a7d0d7/4g81ARflklYGhfwtL9Xdw2JUrXWddedfE-vlclSv062oYkKj4xgiHEz_Hhi749OXhuQoNSi_CN_a-BljXjR1ZA==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=22&hid=b47c9ec151d97eeac73725f96fe0c985&media_type=text&tknv=v3&ts=63ceaaa64a3c0&s=6eb42c977733efbbc7b2e014da40152a85a6f87b8128a8b4fe26e52f0cd4eb2c&pb=U2FsdGVkX1-73hrHtGkK3WwaqCozU3cIjiMJ4MmD7VqUe6v4aNBpzFOUXjOYmfkcAUp0NcIsvFeGoS2d-e82mjQyLxrSzbbRfB1XDYzfGPM HTTP/1.1" 200 22
+2025-08-22 01:07:20,534 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-08-22 01:08:27,380 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:08:27,998 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:08:28,003 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:08:28,439 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/d7cb9a903b47598c405a1eb1334c86b29023600de2ad935cb65ddab5fc9a5480/68a7d11c/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:08:28,445 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s125klg.storage.yandex.net:443
+2025-08-22 01:08:28,823 urllib3.connectionpool DEBUG    https://s125klg.storage.yandex.net:443 "GET /rdisk/d7cb9a903b47598c405a1eb1334c86b29023600de2ad935cb65ddab5fc9a5480/68a7d11c/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63ceaae817f00&s=f1ca3025b1a27b65b039152bdfeded9de7339f392c9ece606c67201206fe8685&pb=U2FsdGVkX1_1BBe7776xyK8kNTHFq-nby6Lbl-G3fg8fMVghlgZ7k976-1Ubhniu93FWa1RD3In-9Y40QPSsMdm1Ni149HvG1Ws65HPIvhI HTTP/1.1" 200 15
+2025-08-22 01:08:29,962 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-08-22 01:08:30,371 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-08-22 01:08:30,376 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-08-22 01:08:30,706 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/05a46bdaa0f05624f1fcde9f6b257ba8a7446c53441ff0de77b9630525cf6c43/68a7d11e/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-08-22 01:08:30,712 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s125klg.storage.yandex.net:443
+2025-08-22 01:08:31,072 urllib3.connectionpool DEBUG    https://s125klg.storage.yandex.net:443 "GET /rdisk/05a46bdaa0f05624f1fcde9f6b257ba8a7446c53441ff0de77b9630525cf6c43/68a7d11e/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63ceaaea00380&s=24f4d7da1d08768f78bd3820a2181550d9a4dca8a1d24fa05c8825c8a562ac74&pb=U2FsdGVkX1_IKKgTzmBS4HcUiRoM8zhwd_zpl5AOufEDGdxu1VDqWstrfVVhw9xDNBRr_yyrQ6MYHeu6lDKQh9aJdOsdmMCLp3tbmyYqkBc HTTP/1.1" 200 15
+2025-08-22 01:08:31,238 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:05:01,828 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:05:02,351 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:05:02,355 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:05:02,758 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/05121dcc1d87494c14df51dc589547026ed5e7a39b6faf74d85225eaef2502fd/68bcf65e/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:05:02,766 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s677vla.storage.yandex.net:443
+2025-09-07 02:05:03,202 urllib3.connectionpool DEBUG    https://s677vla.storage.yandex.net:443 "GET /rdisk/05121dcc1d87494c14df51dc589547026ed5e7a39b6faf74d85225eaef2502fd/68bcf65e/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d5643d380&s=17962d0b7f7de46af81e7920a1c0658de2ecfe14df2df79f30118b7719a37424&pb=U2FsdGVkX1942I8FYhnPid5MX48z-6b7AVx4PCk7VRzLNn-e88UzySmBwr6sPsHvhAAnlm6Ly1x2SsJcM1qTdpt9VKu-ZASU2ldLjV1rsng HTTP/1.1" 200 15
+2025-09-07 02:05:04,435 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:05:04,909 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:05:04,914 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:05:05,294 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/b78290aeac0e0e7117eadc733d306e01f352cd7d58f2de253756d526f691a905/68bcf660/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:05:05,300 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s677vla.storage.yandex.net:443
+2025-09-07 02:05:05,638 urllib3.connectionpool DEBUG    https://s677vla.storage.yandex.net:443 "GET /rdisk/b78290aeac0e0e7117eadc733d306e01f352cd7d58f2de253756d526f691a905/68bcf660/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d56625800&s=748d2a2cc0eaf532f9bde96b447faded8e8cac1e94b2ee2d38807f8631e9bae0&pb=U2FsdGVkX1_-evGZpBEiVsDTHlL2l1PNnBj5SqXFYsZvrCPCUPzfkm9IcRThbqu4Wp6VJ4p6mvpOqaX6s7loiQEA-8LjRT9TJADuXKo21lo HTTP/1.1" 200 15
+2025-09-07 02:05:05,780 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:05:14,273 django.request WARNING  Not Found: /favicon.ico
+2025-09-07 02:08:01,512 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:08:01,961 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:08:01,966 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:08:02,349 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/545dadcb9c6f2ca74d24a14de33154d20db0320e9a1c8d180d84ad5acf40299e/68bcf711/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:08:02,355 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s677vla.storage.yandex.net:443
+2025-09-07 02:08:02,711 urllib3.connectionpool DEBUG    https://s677vla.storage.yandex.net:443 "GET /rdisk/545dadcb9c6f2ca74d24a14de33154d20db0320e9a1c8d180d84ad5acf40299e/68bcf711/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d60ef2640&s=86bc8f868d95b538b8169b32065221f72fbbd05ea2323907511111a1aeb3fe04&pb=U2FsdGVkX190qoL673gRXl8G5ANRevqDlL4Amwym1Q-qa-ldEW8NUcmCzRxr63IeZfwpoN5PioidGQ1L_pkJxU5dgIv6NxC-4h7KoL7EYng HTTP/1.1" 200 15
+2025-09-07 02:08:03,738 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:08:04,428 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:08:04,433 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:08:04,843 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/8e10dbed8f2196171e85249336572f2d7723aee1ea650111fee681c26a7e2114/68bcf714/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:08:04,849 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s677vla.storage.yandex.net:443
+2025-09-07 02:08:05,264 urllib3.connectionpool DEBUG    https://s677vla.storage.yandex.net:443 "GET /rdisk/8e10dbed8f2196171e85249336572f2d7723aee1ea650111fee681c26a7e2114/68bcf714/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d611ced00&s=52f9d949df9577a160ceea5a91f3ba78072d2e474c0c13e597b0694af62d2141&pb=U2FsdGVkX1-gCIADswZ1BHc9X7zJ1MrncaA9N32ZvSkrNlDjOAQAkRC2bZCYpNK1pZgx7bBKKfjGYmmxtPnXNl1Bdum0ZmbQ6JCuRFbsUzQ HTTP/1.1" 200 15
+2025-09-07 02:08:05,408 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:10:05,315 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:10:05,838 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:10:05,843 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:10:06,291 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/15455c815466e124172f8fc8e7364ba88adef879121113913951d7f8d8af90b2/68bcf78d/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:10:06,298 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s677vla.storage.yandex.net:443
+2025-09-07 02:10:06,636 urllib3.connectionpool DEBUG    https://s677vla.storage.yandex.net:443 "GET /rdisk/15455c815466e124172f8fc8e7364ba88adef879121113913951d7f8d8af90b2/68bcf78d/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d68533d40&s=f662982d67130650c6415d1c6bd5954a5383790846dcd2a3d14ad6261ebb10fd&pb=U2FsdGVkX1_dcD3RQ7tJL7j6rFIKGATWGnlPDZQfLpc0TyH7e1ICogZSw_HV5-ra0fATT4fQvjJU0921OvrTsIz1ZXhssmTKbghkX7UzBKE HTTP/1.1" 200 15
+2025-09-07 02:10:07,815 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:10:08,365 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:10:08,370 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:10:08,724 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/6122b35046c561972af235c702e535b7b9037ab404ff2f8f4bf85a7d27dff506/68bcf790/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:10:08,730 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s677vla.storage.yandex.net:443
+2025-09-07 02:10:09,089 urllib3.connectionpool DEBUG    https://s677vla.storage.yandex.net:443 "GET /rdisk/6122b35046c561972af235c702e535b7b9037ab404ff2f8f4bf85a7d27dff506/68bcf790/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d68810400&s=1ba6815e340b36869b00773fdf3f5af4e502faf9e28da9e54a556367207a33cd&pb=U2FsdGVkX19OFbPsEtl53K1b8oP4JpRYe_d_BW2BUQYKsPyk_amk4TQvkkko7DiVRP2X8cz7SzsjaaVVLqFHuaHkWgOC40VxTGHksfPxTo4 HTTP/1.1" 200 15
+2025-09-07 02:10:09,223 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:11:31,708 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-09-07 02:11:33,027 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): cloud-api.yandex.net:443
+2025-09-07 02:11:33,576 urllib3.connectionpool DEBUG    https://cloud-api.yandex.net:443 "GET /v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FvSCymdXw3DYD1g HTTP/1.1" 200 None
+2025-09-07 02:11:33,579 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): downloader.disk.yandex.ru:443
+2025-09-07 02:11:34,005 urllib3.connectionpool DEBUG    https://downloader.disk.yandex.ru:443 "GET /disk/d76459ab73cbb52675b3a44a6cd782c141524013ce865bd18b73d2315119b7ff/68bcf7e5/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow%3D%3D?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3 HTTP/1.1" 302 0
+2025-09-07 02:11:34,012 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): s125klg.storage.yandex.net:443
+2025-09-07 02:11:34,430 urllib3.connectionpool DEBUG    https://s125klg.storage.yandex.net:443 "GET /rdisk/d76459ab73cbb52675b3a44a6cd782c141524013ce865bd18b73d2315119b7ff/68bcf7e5/4g81ARflklYGhfwtL9Xdw2aDxXJp6pAUb6XAySYDNZEGY_Ejei-_WKqv1vi0hrfNwNlXxgHuWw13CFRmisR0ow==?uid=0&filename=slex.json&disposition=attachment&hash=JMHrw3b0YYj9VkIa%2B3eqlBgbL4y4mJCGOnjmGrdlPrQnUVcBVVo/W7Hfgk5%2BY%2BQ8q/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=text%2Fplain&owner_uid=1360722799&fsize=15&hid=77a5001be240c0847f1782af3f601d95&media_type=text&tknv=v3&ts=63e2d6d920340&s=d371ce5631bf4f586147dcaf133b5c3c09ae94af7c16b2435252532a3d60142a&pb=U2FsdGVkX1_lh1966d9Ji97Y4HMohKeAZYV30lsSNxdG4I27gq7f8V7JDW_CXIxUiSN8d761JbmL6Pqa-M5CXycHwUr-hQYMyXGkXjreSRQ HTTP/1.1" 200 15
+2025-09-07 02:11:34,593 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:11:51,672 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-09-07 02:11:52,974 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-07-15 18:37:33,170 django.request WARNING  Not Found: /favicon.ico
 2025-07-15 18:38:40,051 sqlalchemy.engine.Engine INFO     select pg_catalog.version()
 2025-07-15 18:38:40,051 sqlalchemy.engine.Engine INFO     [raw sql] {}
@@ -10359,3 +10778,32 @@ zipfile.BadZipFile: File is not a zip file
 2025-08-21 13:49:15,460 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-08-21 14:11:01,099 django.request WARNING  Not Found: /favicon.ico
 2025-08-21 14:19:03,604 django.request WARNING  Not Found: /favicon.ico
+2025-09-07 02:13:42,295 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:13:57,012 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:14:02,256 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:14:06,231 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\rustam\PycharmProjects\SLEX_02\.venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-09-07 02:14:06,301 django.request WARNING  Bad Request: /
+2025-09-07 02:14:30,925 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\SLEX_02\settings.py changed, reloading.
+2025-09-07 02:14:32,281 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:18:55,038 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-09-07 02:18:56,434 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:19:09,154 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\views.py changed, reloading.
+2025-09-07 02:19:10,610 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:23:39,300 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\contract_models\rnd\x5.py changed, reloading.
+2025-09-07 02:23:40,751 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:23:46,556 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\contract_models\rnd\x5.py changed, reloading.
+2025-09-07 02:23:47,955 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:24:20,806 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\base_app\contract_models\rnd\x5.py changed, reloading.
+2025-09-07 02:24:22,054 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:26:45,500 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\manage.py changed, reloading.
+2025-09-07 02:26:46,963 django.utils.autoreload INFO     Watching for file changes with StatReloader

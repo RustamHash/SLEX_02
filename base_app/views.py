@@ -13,7 +13,7 @@ from base_app.contract_models.krd import (
     ssk,
     unigra,
 )
-from base_app.contract_models.rnd import ok, ssk_rnd, temp
+from base_app.contract_models.rnd import ok, ssk_rnd, temp, x5
 from base_app.contract_models.sochi import ssk_sochi
 from base_app.contract_models.vlg import smit, dzhokej, atm, sady
 from base_app.models import Filial, Contracts, Menu, Operations, Reports
@@ -44,6 +44,7 @@ dict_module = {
     "sady": sady,
     "unigra": unigra,
     "temp": temp,
+    "x5": x5,
 }
 dict_operation = {
     "order_btn": False,
