@@ -10807,3 +10807,4 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000
 2025-09-07 02:24:22,054 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2025-09-07 02:26:45,500 django.utils.autoreload INFO     C:\Users\rustam\PycharmProjects\SLEX_02\manage.py changed, reloading.
 2025-09-07 02:26:46,963 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2025-09-07 02:28:36,595 django.utils.autoreload INFO     Watching for file changes with StatReloader
