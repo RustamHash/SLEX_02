@@ -1,0 +1,9 @@
+Django
+#rest_framework
+djangorestframework
+openpyxl
+pandas
+et-xmlfile
+django-debug-toolbar
+requests
+sqlalchemy
