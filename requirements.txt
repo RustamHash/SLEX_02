@@ -1,5 +1,4 @@
 Django
-#rest_framework
 djangorestframework
 openpyxl
 pandas
