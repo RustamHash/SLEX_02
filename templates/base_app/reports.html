@@ -1,0 +1,33 @@
+{% extends 'base_app/base_templates.html' %}
+
+{% block content %}
+    <div id="basic_div_menu">
+        <div class="sub_menu">
+            {% for rep in reports %}
+                {% if reports_selected == rep.slug %}
+                    <span class="selected"><a href="{% url 'report:index' %}">
+                        {{ rep.name }}
+                    </a>
+                    </span>
+                {% else %}
+                    <span class="button_line">
+                        <a href="{% url 'choice_reports' _filial_slug=filial.slug _reports_slug=rep.slug  %}">
+                        {{ rep.name }}
+                        </a>
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% if report %}
+        <div class="operation_div" id="operation_div">
+            {% if report.slug == 'billingi' %}
+                <div class="form_div">
+                    {{ form }}
+                    <input id="click_ok" type="button" name="your_name" value="test" maxlength="100" required>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}
+

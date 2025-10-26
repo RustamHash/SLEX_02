@@ -1,0 +1,67 @@
+/*.santa {*/
+/*position: fixed;*/
+/*bottom: 10px;*/
+/*right: 10px;*/
+/*}*/
+
+.santa {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+}
+
+#gir_top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('http://lh5.googleusercontent.com/-obNunPiVVd4/VJOuk2f29_I/AAAAAAAAE3Y/SOoFIrFTTkk/s800/gerljanda1.png');
+    height: 36px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99
+}
+
+#gir {
+    /*position:fixed;*/
+    top: 0;
+    left: 0;
+    background-image: url('http://lh5.googleusercontent.com/-obNunPiVVd4/VJOuk2f29_I/AAAAAAAAE3Y/SOoFIrFTTkk/s800/gerljanda1.png');
+    height: 36px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99
+}
+
+#nums_1 {
+    padding: 100px
+}
+
+.gir_1 {
+    background-position: 0 0
+}
+
+.gir_2 {
+    background-position: 0 -36px
+}
+
+.gir_3 {
+    background-position: 0 -72px
+}
+
+
+body {
+    /*background-color: #000;*/
+    background-image: url('http://pve.su/example/sn2.png'), url('http://pve.su/example/sn3.png'), url('http://pve.su/example/sn1.png');
+    animation: snow 15s linear infinite;
+}
+
+@keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 200px 200px;
+    }
+}
+

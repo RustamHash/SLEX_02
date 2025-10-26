@@ -4,43 +4,29 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'base_app/css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/menu.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/buttons.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/inputs.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/content.css' %}">
     <link rel="stylesheet" href="{% static 'base_app/css/login.css' %}">
-    <link rel="stylesheet" href="{% static 'base_app/css/contracts.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/base_home.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/sub_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'base_app/css/new_years.css' %}">
+    <link href="https://uguide.su/new_year/1/snow.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <title>Обработка</title>
 </head>
 <body>
 
-<div class="container_header">
-    <div id="menu-header">
+<div id="container_header">
+    <div id="menu_header">
         <div class="menu-header-left">
-            {% if prefix %}
-                <a href="/{{ prefix }}/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
-            {% else %}
-                <a href="/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
-            {% endif %}
+            <a href="/"><img src="{% static "base_app/images/slex-logo.png" %}" alt="SLEX"></a>
         </div>
         <div class="menu-header-center">
-            {% if user.is_superuser %}
-                {% if title %}
-                    {% if user.is_superuser %}
-                        <h2><a href="/">{{ title }}</a></h2>
-                    {% else %}
-                        <h2><a href="/{{ prefix }}/">{{ title }}</a></h2>
-                    {% endif %}
-                {% else %}
-                    <h2><a href="/">Главная</a></h2>
-                {% endif %}
+            {% if filial %}
+                <h2><a href="{{ filial.get_home_url }}">{{ filial.name }}</a></h2>
             {% else %}
-                {% if title %}
-                    <h2>{{ title }}</h2>
-                {% else %}
-                    <h2>Главная</h2>
-                {% endif %}
+                <h2><a href="/">Главная</a></h2>
             {% endif %}
         </div>
         <div class="menu-header-right">
@@ -59,34 +45,92 @@
             {% endif %}
         </div>
     </div>
+    {#    <a href="javascript:window.history.back();"> <<<< </a>#}
+    {% block menu %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+    {% block operation %}
+    {% endblock %}
+    {% block show_result %}
+    {% endblock %}
+
+    {% if error_msg %}
+        <div id="header">
+            <div class="basic-div">
+                <div><label>
+                    <textarea>{{ error_msg }}</textarea>
+                </label></div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% block modals %}
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
 </div>
 
-{% block menu %}
-{% endblock %}
+{#{% block Santa %}#}
+{#    <div class="santa"><img src="https://mnogoblog.ru/wp-content/uploads/2015/12/santasled.gif" alt=""/></div>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>#}
+{#    <script type="text/javascript">#}
+{#        $(document).ready(function () {#}
+{#            var windowWidth = $(document).width();#}
+{#            var santa = $('santa');#}
+{#            santa_right_pos = windowWidth + santa.width();#}
+{#            santa.right = santa_right_pos;#}
+{##}
+{#            function movesanta() {#}
+{#                santa.animate({right: windowWidth + santa.width()}, 15000, function () {#}
+{#                    santa.css("right", "-500px");#}
+{#                    setTimeout(function () {#}
+{#                        movesanta();#}
+{#                    }, 10000);#}
+{#                });#}
+{#            }#}
+{##}
+{#            movesanta();#}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}
 
-{% if msg %}
-    <div id="header">
-        <div class="basic-div">
-            {% if error_msg %}
-                <div class=" content-error-div">{{ msg }}</div>
-            {% else %}
-                <div class=" content-success-div">{{ msg }}</div>
-            {% endif %}
-        </div>
-    </div>
 
-{% endif %}
+{#{% block new_year_1 %}#}
+{#    <script src="https://uguide.su/new_year/1/Snow.min.js"></script>#}
+{#    <script>#}
+{#        new Snow();#}
+{#    </script>#}
+{#    <script>#}
+{#        new Snow({#}
+{#            iconColor: "#a6e7ff", //цвет снежинок#}
+{#            iconSize: 20, //размер снежинок#}
+{#            icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="#000000">#}
+{#                <path d="M 6 6 L 6 26 L 26 26 L 26 6 L 6 6 z"/>#}
+{#            </svg>,#}
+{#            showSnowBalls: true,#}
+{#            showSnowBallsIsMobile:#}
+{#                true, //отдельная опция сугробов на мобилках#}
+{#            showSnowflakes:#}
+{#                true, //включение или отключение снегопада#}
+{#            countSnowflake:#}
+{#                100, //количество снежинок на экране, не более 100#}
+{#            snowBallsLength:#}
+{#                10, // число сугробов, не более 10#}
+{#            snowBallIterations:#}
+{#                40, // итерации роста сугроба, от 10 до 40#}
+{#            snowBallupNum:#}
+{#                1, // пиксели роста в течение одной итерации, не более 3#}
+{#            snowBallIterationsInterval:#}
+{#                2000, // скорость роста сугроба в миллисекундах, то есть 1000 миллисекунд = 1 секунда#}
+{#            clearSnowBalls:#}
+{#                10000, // время, через которое машинка убирает сугробы, здесь это 20 секунд#}
+{#        })#}
+{#        ;#}
+{#    </script>#}
+{#{% endblock %}#}
 
-{% block content %}
-{% endblock %}
-
-{% block data_order %}
-{% endblock %}
-
-{% block modals %}
-{% endblock %}
-
-{% block scripts %}
-{% endblock %}
 </body>
 </html>

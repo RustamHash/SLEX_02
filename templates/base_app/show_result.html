@@ -1,0 +1,8 @@
+{% extends 'base_app/operations.html' %}
+
+
+{% block show_result %}
+    {% for key, val in result.items %}
+        {{ key }}: {{ val }} <br>
+    {% endfor %}
+{% endblock %}

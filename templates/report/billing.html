@@ -1,0 +1,72 @@
+{% extends 'report/reports.html' %}
+
+{% block operation %}
+    <div class="operation_div">
+        <div class="form_div">
+            <form NAME="Sel" action="{% url 'reports:billing' %}" method="post">
+                {% csrf_token %}
+                {{ form_filials }}
+                {{ form_contracts }}
+                {{ form_department }}
+                {{ form_periods }}
+                <input class="btn_open_file" type="submit" VALUE="Сформировать">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        window.onload = () => {
+            myFunction();
+        };
+
+        function myFunction() {
+            $.ajax({
+                url: 'http://172.28.178.81:8000/api/v1/filials/',
+                type: 'get',
+                {#data: 'q=' + str,#}
+                dataType: 'json',
+                success: function (json) {
+                    $.each(json, function (i, value) {
+                        $('#filial_field').append($('<option>').text(value.name).attr('value', value.slug));
+                        if (1 === value.id) {
+                            $.each(value.contracts, function (j, contract) {
+                                if (contract.as_active) {
+                                    $('#contract_field').append($('<option>').text(contract.name).attr('value', contract.slug));
+                                    console.log(contract.name)
+                                }
+                            })
+                        }
+                    });
+                }
+            });
+        }
+
+        $('#filial_field').change(function () {
+            let val = $("#filial_field option:selected").text();
+            document.getElementById('contract_field').options.length = 0;
+            if (val) {
+                $('#contract_field').prop('disabled', false);
+                $.ajax({
+                    url: 'http://172.28.178.81:8000/api/v1/filials/',
+                    type: 'get',
+                    {#data: 'q=' + str,#}
+                    dataType: 'json',
+                    success: function (json) {
+                        $.each(json, function (i, value) {
+                            if (val === value.name) {
+                                $.each(value.contracts, function (j, contract) {
+                                    if (contract.as_active) {
+                                        $('#contract_field').append($('<option>').text(contract.name).attr('value', contract.slug));
+                                        console.log(contract.name)
+                                    }
+                                })
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}
